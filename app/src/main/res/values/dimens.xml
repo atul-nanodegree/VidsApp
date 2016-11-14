@@ -1,9 +1,93 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">160dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+
+
+    <!---Text sizes -->
+    <dimen name="text_7sp">7sp</dimen>
+    <dimen name="text_8sp">8sp</dimen>
+    <dimen name="text_10sp">10sp</dimen>
+    <dimen name="text_11sp">11sp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
+    <dimen name="text_13sp">13sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+    <dimen name="text_15sp">15sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="text_18sp">18sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+
+    <!---Margin sizes -->
+    <dimen name="margin_1dp">1dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_3dp">3dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="margin_7dp">7dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_9dp">9dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_11dp">11dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_13dp">13dp</dimen>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_17dp">17dp</dimen>
+    <dimen name="margin_18dp">18dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_22dp">22dp</dimen>
+    <dimen name="margin_23dp">23dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_26dp">26dp</dimen>
+    <dimen name="margin_28dp">28dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_35dp">35dp</dimen>
+    <dimen name="margin_36dp">36dp</dimen>
+    <dimen name="margin_38dp">38dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_45dp">45dp</dimen>
+    <dimen name="margin_46dp">46dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="margin_55dp">55dp</dimen>
+    <dimen name="margin_60dp">60dp</dimen>
+    <dimen name="margin_70dp">70dp</dimen>
+    <dimen name="margin_72dp">72dp</dimen>
+    <dimen name="margin_80dp">80dp</dimen>
+    <dimen name="margin_94dp">94dp</dimen>
+    <dimen name="margin_100dp">100dp</dimen>
+    <dimen name="margin_102dp">102dp</dimen>
+    <dimen name="margin_112dp">112dp</dimen>
+    <dimen name="margin_120dp">120dp</dimen>
+    <dimen name="margin_130dp">130dp</dimen>
+    <dimen name="margin_140dp">140dp</dimen>
+    <dimen name="margin_150dp">150dp</dimen>
+    <dimen name="margin_170dp">170dp</dimen>
+    <dimen name="margin_180dp">180dp</dimen>
+    <dimen name="margin_190dp">190dp</dimen>
+    <dimen name="margin_200dp">200dp</dimen>
+    <dimen name="margin_220dp">220dp</dimen>
+    <dimen name="margin_250dp">250dp</dimen>
+    <dimen name="margin_260dp">260dp</dimen>
+    <dimen name="margin_290dp">290dp</dimen>
+    <dimen name="divider_2.7dp">2.7dp</dimen>
+    <dimen name="margin_72.7dp">72.7dp</dimen>
+    <dimen name="margin_11.7dp">11.7dp</dimen>
+    <dimen name="width_345.3dp">345.3dp</dimen>
+    <dimen name="hight_78.7dp">78.7dp</dimen>
+    <dimen name="margin_12.7dp">12.7dp</dimen>
+    <dimen name="margin_21dp">21dp</dimen>
+    <dimen name="text_21sp">21sp</dimen>
+    <dimen name="margin_62dp">62dp</dimen>
+    <dimen name="margin_61dp">61dp</dimen>
+    <dimen name="text_17sp">17sp</dimen>
+    <dimen name="height_60dp">60dp</dimen>
+
 </resources>

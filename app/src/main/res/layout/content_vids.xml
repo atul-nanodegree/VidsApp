@@ -10,10 +10,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="vidsapp.wowapps.com.vidsapp.VidsActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/activity_vids">
 
     <TextView
+        android:id="@+id/textView_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <FrameLayout
+        android:id="@+id/fragment_frame"
+        android:layout_below="@+id/textView_main"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
