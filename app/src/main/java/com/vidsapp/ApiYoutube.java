@@ -116,7 +116,24 @@ return youtubeNtOVideosListEntity;
 
     public YoutubeNtOVideosListEntity videosFromArrayList(){
         YoutubeNtOVideosListEntity playListItems = null;
+        VideoListResponse response = null;
+        try{
+            mQueryVideoList = mYoutube.videos().list("id,snippet");
+            mQueryVideoList.setKey(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY);
+            // mQueryNtOVideoList.setType("video");
+            //  mQueryNtOVideoList.setChannelId("UCbTLwN10NoCU4WDzLf1JMOA");
+            mQueryVideoList.setId("cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
+            // mQueryNtOVideoList.setOrder("date");
+            //  mQueryNtOVideoList.setPageToken(pageToken);
+            //  mQueryNtOVideoList.setFields("items(id/playlistId,snippet/title,snippet/description,snippet/publishedAt,snippet/liveBroadcastContent,snippet/thumbnails/medium/url)");
+            mQueryVideoList.setMaxResults((long) 50);
+            //  mQueryNtOVideoList.setQ(query);
+            response = mQueryVideoList.execute();
+            playListItems = parseSearchListforVideosData(response);
+        }catch(IOException e){
 
+            return null;
+        }
         return playListItems;
     }
 
