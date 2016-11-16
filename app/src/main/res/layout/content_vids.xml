@@ -12,15 +12,32 @@
     tools:context="vidsapp.wowapps.com.vidsapp.VidsActivity"
     tools:showIn="@layout/activity_vids">
 
-    <TextView
-        android:id="@+id/textView_main"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/cat_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="40"
+            android:background="@drawable/spinner_bg"/>
+
+        <Spinner
+            android:id="@+id/sub_category"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="40"
+            android:background="@drawable/spinner_bg"/>
+    </LinearLayout>
+
 
     <FrameLayout
         android:id="@+id/fragment_frame"
-        android:layout_below="@+id/textView_main"
+        android:layout_below="@+id/cat_layout"
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

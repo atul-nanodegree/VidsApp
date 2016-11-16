@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">VidsApp</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="vids_category">
+        <item>Home remedies</item>
+        <item>Beauty tips</item>
+        <item>Motivational</item>
+        <item>Mythological</item>
+        <item>Bollywood songs</item>
+        <item>Gazals</item>
+        <item>Shayari</item>
+        <item>Kavi sammelan</item>
+        <item>Bollywood movies</item>
+        <item>Kids</item>
+        <item>Parenting</item>
+        <item>Food recipes</item>
+    </string-array>
 </resources>
