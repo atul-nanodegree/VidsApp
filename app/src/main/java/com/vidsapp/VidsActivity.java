@@ -1,6 +1,7 @@
 package com.vidsapp;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ public class VidsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.drawable.ic_launcher);
+        CoordinatorLayout mainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -36,9 +38,18 @@ public class VidsActivity extends AppCompatActivity {
 
         initializeVidsCategory();
 
-        Fragment fragment = new VideosListFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+//        Fragment fragment = new VideosListFragment();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+        if (NetworkUtil.isConnected(this)) {
+            Fragment fragment = new VideosListFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+        }
+        else{
+            Snackbar.make(mainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
     }
 
     private void initializeVidsCategory() {
@@ -81,6 +92,7 @@ public class VidsActivity extends AppCompatActivity {
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
                 });
+
     }
 
     @Override

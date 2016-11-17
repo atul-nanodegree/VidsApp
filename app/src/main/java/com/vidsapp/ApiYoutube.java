@@ -25,6 +25,7 @@ public class ApiYoutube {
     private YouTube mYoutube;
     private YouTube.Search.List mQueryNtOVideoList;
     YouTube.Videos.List mQueryVideoList;
+    private YoutubeNtOVideosListEntity youtubeNtOVideosListEntity=null;
 
     /**
      * Constructor modified to accept url and any other params
@@ -34,7 +35,7 @@ public class ApiYoutube {
 
     }
 
-    public YoutubeNtOVideosListEntity intiateAPICall(){
+    public YoutubeNtOVideosListEntity intiateAPICall(String type,String requestValue){
 
                 mYoutube = new YouTube.Builder(new NetHttpTransport(),
                         new JacksonFactory(), new HttpRequestInitializer() {
@@ -42,10 +43,15 @@ public class ApiYoutube {
                     public void initialize(HttpRequest hr) throws IOException {}
                 }).setApplicationName("VidsApp").build();
 
-        YoutubeNtOVideosListEntity youtubeNtOVideosListEntity = videosNewToOld();
+        if (type != null) {
+            if (type.equals("video")) {
+                youtubeNtOVideosListEntity = videosFromArrayList(requestValue);
+            } else if (type.equals("channel")) {
+                youtubeNtOVideosListEntity = videosNewToOld(requestValue);
+            }
+        }
 
-
-return youtubeNtOVideosListEntity;
+        return youtubeNtOVideosListEntity;
     }
 
 
@@ -53,15 +59,15 @@ return youtubeNtOVideosListEntity;
 
 
 
-
-    public YoutubeNtOVideosListEntity videosNewToOld(){
+// for playing channel
+    public YoutubeNtOVideosListEntity videosNewToOld(String requestValue){
         YoutubeNtOVideosListEntity playListItems = null;
         SearchListResponse response = null;
         try{
             mQueryNtOVideoList = mYoutube.search().list("id,snippet");
             mQueryNtOVideoList.setKey(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY);
             mQueryNtOVideoList.setType("video");
-            mQueryNtOVideoList.setChannelId("UCDS9hpqUEXsXUIcf0qDcBIA");
+            mQueryNtOVideoList.setChannelId(requestValue);
             //mQueryNtOVideoList.setQ("Mindtree Ltd.");
             mQueryNtOVideoList.setOrder("date");
           //  mQueryNtOVideoList.setPageToken(pageToken);
@@ -113,8 +119,8 @@ return youtubeNtOVideosListEntity;
         return videoListItems;
     }
 
-
-    public YoutubeNtOVideosListEntity videosFromArrayList(){
+// for playing list of Videos
+    public YoutubeNtOVideosListEntity videosFromArrayList(String requestValue){
         YoutubeNtOVideosListEntity playListItems = null;
         VideoListResponse response = null;
         try{
@@ -122,7 +128,7 @@ return youtubeNtOVideosListEntity;
             mQueryVideoList.setKey(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY);
             // mQueryNtOVideoList.setType("video");
             //  mQueryNtOVideoList.setChannelId("UCbTLwN10NoCU4WDzLf1JMOA");
-            mQueryVideoList.setId("cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
+            mQueryVideoList.setId(requestValue);
             // mQueryNtOVideoList.setOrder("date");
             //  mQueryNtOVideoList.setPageToken(pageToken);
             //  mQueryNtOVideoList.setFields("items(id/playlistId,snippet/title,snippet/description,snippet/publishedAt,snippet/liveBroadcastContent,snippet/thumbnails/medium/url)");

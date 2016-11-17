@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/forgot_password_bg"
-    tools:context="vidsapp.wowapps.com.vidsapp.VideosListFragment">
+    tools:context="com.vidsapp.VideosListFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/youtube_videolists_recyclerview"
