@@ -66,7 +66,8 @@ public class VideosListFragment extends Fragment {
     private class YoutubeTask extends AsyncTask<String, Integer, YoutubeNtOVideosListEntity> {
         protected YoutubeNtOVideosListEntity doInBackground(String... urls) {
             ApiYoutube a=new ApiYoutube();
-            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall();
+            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
+            //YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("channel","UCDS9hpqUEXsXUIcf0qDcBIA");
 
             return youtubeNtOVideosListEntity;
         }
@@ -76,22 +77,25 @@ public class VideosListFragment extends Fragment {
         }
 
         protected void onPostExecute(YoutubeNtOVideosListEntity result) {
-            videoListEntity =result;
+            videoListEntity = result;
+            if(videoListEntity!=null){
             videoListItmeArrayList = videoListEntity.getItems();
 
             if (videoListItmeArrayList != null && videoListItmeArrayList.size() > 0) {
 
 
+                mDoclevelListAdapter.setDataList(videoListItmeArrayList);
 
-                            mDoclevelListAdapter.setDataList(videoListItmeArrayList);
-
-                            mRecyclerView.setAdapter(mDoclevelListAdapter);
+                mRecyclerView.setAdapter(mDoclevelListAdapter);
 
 
             } else {
-                Toast.makeText(mContext, "no docs available for this agenda item ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "videoListItmeArrayList is null", Toast.LENGTH_SHORT).show();
             }
-
+        }
+            else{
+                Toast.makeText(mContext, "videoListEntity is null", Toast.LENGTH_SHORT).show();
+            }
 
           //  Log.i("logs for youtube",result.getNextPageToken());
 
