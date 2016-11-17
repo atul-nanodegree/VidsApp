@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class VidsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class VidsActivity extends AppCompatActivity {
 
     private Spinner categorySpinner, subCategorySpinner;
 
@@ -34,17 +34,53 @@ public class VidsActivity extends AppCompatActivity implements AdapterView.OnIte
 //            }
 //        });
 
+        initializeVidsCategory();
+
+        Fragment fragment = new VideosListFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+    }
+
+    private void initializeVidsCategory() {
         categorySpinner = (Spinner) findViewById(R.id.category);
         ArrayAdapter<String> catAdapter = new ArrayAdapter<String>(this, R.layout.spinner_text,
                 getResources().getStringArray(R.array.vids_category));
         catAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(catAdapter);
+        categorySpinner.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        String selectedCategory = parent.getItemAtPosition(pos).toString();
+                        if (selectedCategory != null) {
+                            if (selectedCategory.equalsIgnoreCase("Home remedies")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.home_remedies_list));
+                            }
+                        }
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
+    }
+
+    private void initializeVidsSubCategory(String[] subCategory) {
         subCategorySpinner = (Spinner) findViewById(R.id.sub_category);
-
-
-        Fragment fragment = new VideosListFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+        ArrayAdapter<String> subCatAdapter = new ArrayAdapter<String>(this,
+                R.layout.spinner_text, subCategory);
+        subCatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subCategorySpinner.setAdapter(subCatAdapter);
+        subCategorySpinner.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                        String selectedSubCategory = parent.getItemAtPosition(pos).toString();
+                        if (selectedSubCategory != null) {
+                            if (selectedSubCategory.equalsIgnoreCase("High blood pressure")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.home_remedies_list));
+                            }
+                        }
+                    }
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
     }
 
     @Override
@@ -67,15 +103,5 @@ public class VidsActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }

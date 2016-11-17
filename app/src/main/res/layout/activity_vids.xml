@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/toolbar_title"
-                    android:text="The best videos for you!" />
+                    android:text="Cool videos for you!" />
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
 

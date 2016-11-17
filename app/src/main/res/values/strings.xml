@@ -16,4 +16,48 @@
         <item>Parenting</item>
         <item>Food recipes</item>
     </string-array>
+
+    <string-array name="home_remedies_list">
+        <item>High blood pressure</item>
+        <item>Diabetes</item>
+        <item>Obesity</item>
+        <item>High cholesterol</item>
+        <item>Heart diseases</item>
+        <item>Headache / Migraine</item>
+        <item>Liver disorders / fatty liver</item>
+        <item>Improving eye sights</item>
+        <item>Reduce belly fat</item>
+        <item>Cough and cold</item>
+        <item>Sinusitis</item>
+        <item>Gastric</item>
+        <item>Fever</item>
+        <item>Giddiness</item>
+        <item>Loose motion</item>
+        <item>Vomiting</item>
+        <item>Constipation</item>
+        <item>Dandruff</item>
+        <item>Hair fall</item>
+    </string-array>
+
+    <string-array name="high_bp_vids">
+        <item>FA7bjZsMmo</item>
+        <item>gyPplSxbHwY</item>
+        <item>Ju4XMdu8Iwk</item>
+        <item>6HGnizDUugE</item>
+        <item>n5BQ1sJ3exo</item>
+        <item>K77FavcJaA0</item>
+        <item>jAHtk5t5h74</item>
+        <item>qMQP53wroFk</item>
+        <item>HKuQM8ZzJDI</item>
+        <item>RQNAa-tqr8</item>
+        <item>h_lIuEZeKoo</item>
+        <item>Gastric</item>
+        <item>Fever</item>
+        <item>Giddiness</item>
+        <item>FCk1agpTPTk</item>
+        <item>hcKOpv5-8rI</item>
+        <item>7tNnHW47gqA</item>
+        <item>cM6yWrQLmjM</item>
+        <item>LaTtxLxBquM</item>
+    </string-array>
 </resources>

@@ -23,7 +23,8 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="40"
-            android:background="@drawable/spinner_bg"/>
+            android:background="@drawable/spinner_bg"
+            android:popupBackground="#B0BEC5"/>
 
         <Spinner
             android:id="@+id/sub_category"
