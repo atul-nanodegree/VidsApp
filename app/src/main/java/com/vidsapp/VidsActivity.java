@@ -82,12 +82,16 @@ public class VidsActivity extends AppCompatActivity {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                         String selectedSubCategory = parent.getItemAtPosition(pos).toString();
                         if (selectedSubCategory != null) {
+                            String formatedVidsList = null;
                             if (selectedSubCategory.equalsIgnoreCase("High blood pressure")) {
-                                String formatedVidsList = VidsApplUtil.formatVidsList(
+                                formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.high_bp_vids));
-                                if (listener != null) {
-                                    listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
-                                }
+                            } else if (selectedSubCategory.equalsIgnoreCase("Diabetes")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.diabetes_vids));
+                            }
+                            if (listener != null) {
+                                listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
                             }
                         }
                     }
