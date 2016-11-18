@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class VideosListFragment extends Fragment {
+public class VideosListFragment extends Fragment implements VidsActivity.FetchVidsListener {
 
 
     private List<YoutubeNtOVideosListItemEntity> videoListItmeArrayList = null;
@@ -31,6 +30,8 @@ public class VideosListFragment extends Fragment {
 
     // private View rootView;
 
+    private String vidsType, vidsIds;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -39,16 +40,11 @@ public class VideosListFragment extends Fragment {
         mContext = getActivity();
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.youtube_videolists_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-
-
+        VidsActivity activity = (VidsActivity) mContext;
+        activity.setFetchVideoListener(this);
         mDoclevelListAdapter = new YoutubeNewTOldVideosListAdapter(mContext);
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        if (NetworkUtil.isConnected(mContext)) {
-
-            new YoutubeTask().execute();
-        }
-
         return rootView;
     }
 
@@ -63,11 +59,21 @@ public class VideosListFragment extends Fragment {
     }
 
 
+    @Override
+    public void onFetchVideo(String vidsType, String vidsIds) {
+        this.vidsType = vidsType;
+        this.vidsIds = vidsIds;
+        if (NetworkUtil.isConnected(mContext)) {
+            new YoutubeTask().execute();
+        }
+    }
+
     private class YoutubeTask extends AsyncTask<String, Integer, YoutubeNtOVideosListEntity> {
         protected YoutubeNtOVideosListEntity doInBackground(String... urls) {
             ApiYoutube a=new ApiYoutube();
-            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
+//            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
             //YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("channel","UCDS9hpqUEXsXUIcf0qDcBIA");
+            YoutubeNtOVideosListEntity youtubeNtOVideosListEntity = a.intiateAPICall(vidsType, vidsIds);
 
             return youtubeNtOVideosListEntity;
         }
@@ -78,29 +84,27 @@ public class VideosListFragment extends Fragment {
 
         protected void onPostExecute(YoutubeNtOVideosListEntity result) {
             videoListEntity = result;
-            if(videoListEntity!=null){
-            videoListItmeArrayList = videoListEntity.getItems();
+            if (videoListEntity != null) {
+                videoListItmeArrayList = videoListEntity.getItems();
 
-            if (videoListItmeArrayList != null && videoListItmeArrayList.size() > 0) {
-
-
-                mDoclevelListAdapter.setDataList(videoListItmeArrayList);
-
-                mRecyclerView.setAdapter(mDoclevelListAdapter);
+                if (videoListItmeArrayList != null && videoListItmeArrayList.size() > 0) {
 
 
+                    mDoclevelListAdapter.setDataList(videoListItmeArrayList);
+
+                    mRecyclerView.setAdapter(mDoclevelListAdapter);
+
+
+                } else {
+                    Toast.makeText(mContext, "videoListItmeArrayList is null", Toast.LENGTH_SHORT).show();
+                }
             } else {
-                Toast.makeText(mContext, "videoListItmeArrayList is null", Toast.LENGTH_SHORT).show();
-            }
-        }
-            else{
                 Toast.makeText(mContext, "videoListEntity is null", Toast.LENGTH_SHORT).show();
             }
 
-          //  Log.i("logs for youtube",result.getNextPageToken());
+            //  Log.i("logs for youtube",result.getNextPageToken());
 
         }
     }
-
 
 }

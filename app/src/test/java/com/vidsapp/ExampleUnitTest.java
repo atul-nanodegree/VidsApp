@@ -1,4 +1,4 @@
-package vidsapp.wowapps.com.vidsapp;
+package com.vidsapp;
 
 import org.junit.Test;
 

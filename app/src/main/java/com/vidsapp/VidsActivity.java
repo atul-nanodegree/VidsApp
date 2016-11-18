@@ -2,17 +2,18 @@ package com.vidsapp;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.vidsapp.util.VidsApplUtil;
 
 public class VidsActivity extends AppCompatActivity {
 
@@ -38,9 +39,6 @@ public class VidsActivity extends AppCompatActivity {
 
         initializeVidsCategory();
 
-//        Fragment fragment = new VideosListFragment();
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
         if (NetworkUtil.isConnected(this)) {
             Fragment fragment = new VideosListFragment();
             getSupportFragmentManager().beginTransaction()
@@ -85,7 +83,11 @@ public class VidsActivity extends AppCompatActivity {
                         String selectedSubCategory = parent.getItemAtPosition(pos).toString();
                         if (selectedSubCategory != null) {
                             if (selectedSubCategory.equalsIgnoreCase("High blood pressure")) {
-                                initializeVidsSubCategory(getResources().getStringArray(R.array.home_remedies_list));
+                                String formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.high_bp_vids));
+                                if (listener != null) {
+                                    listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
+                                }
                             }
                         }
                     }
@@ -115,5 +117,13 @@ public class VidsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    private FetchVidsListener listener;
+    public void setFetchVideoListener(FetchVidsListener fvListener) {
+        this.listener = fvListener;
+    }
+
+    public interface FetchVidsListener {
+        public void onFetchVideo(String vidsType, String vidsIds);
     }
 }

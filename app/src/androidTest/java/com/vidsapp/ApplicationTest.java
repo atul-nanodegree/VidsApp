@@ -1,4 +1,4 @@
-package vidsapp.wowapps.com.vidsapp;
+package com.vidsapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
