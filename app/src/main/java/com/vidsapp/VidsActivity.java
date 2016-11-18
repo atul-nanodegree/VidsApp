@@ -89,6 +89,9 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Diabetes")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.diabetes_vids));
+                            } else if (selectedSubCategory.equalsIgnoreCase("Obesity")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.obesity_vids));
                             }
                             if (listener != null) {
                                 listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
