@@ -40,15 +40,9 @@ public class VidsActivity extends AppCompatActivity {
 //        });
 
         initializeVidsCategory();
-        if (NetworkUtil.isConnected(this)) {
-            mVideoFragment = new VideosListFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_frame, mVideoFragment, mVideoFragment.getClass().getSimpleName()).commit();
-        }
-        else{
-            Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        }
+        mVideoFragment = new VideosListFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_frame, mVideoFragment, mVideoFragment.getClass().getSimpleName()).commit();
 
     }
 
@@ -84,6 +78,11 @@ public class VidsActivity extends AppCompatActivity {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                         String selectedSubCategory = parent.getItemAtPosition(pos).toString();
                         if (selectedSubCategory != null) {
+                            if(!NetworkUtil.isConnected(VidsActivity.this)) {
+                                Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
+                                        .setAction("Action", null).show();
+                                return;
+                            }
                             String formatedVidsList = null;
                             if (selectedSubCategory.equalsIgnoreCase("High blood pressure")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
