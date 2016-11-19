@@ -18,6 +18,8 @@ import com.vidsapp.util.VidsApplUtil;
 public class VidsActivity extends AppCompatActivity {
 
     private Spinner categorySpinner, subCategorySpinner;
+    private  CoordinatorLayout mMainCoordinatorLayout;
+    private Fragment mVideoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class VidsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.drawable.ic_launcher);
-        CoordinatorLayout mainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
+        mMainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -38,16 +40,16 @@ public class VidsActivity extends AppCompatActivity {
 //        });
 
         initializeVidsCategory();
-
         if (NetworkUtil.isConnected(this)) {
-            Fragment fragment = new VideosListFragment();
+            mVideoFragment = new VideosListFragment();
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_frame, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
+                    .replace(R.id.fragment_frame, mVideoFragment, mVideoFragment.getClass().getSimpleName()).commit();
         }
         else{
-            Snackbar.make(mainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
+            Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
+
     }
 
     private void initializeVidsCategory() {
@@ -101,6 +103,16 @@ public class VidsActivity extends AppCompatActivity {
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
                 });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!NetworkUtil.isConnected(this)) {
+            Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
 
     }
 
