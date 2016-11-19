@@ -65,10 +65,11 @@
 
             <ImageView
                 android:id="@+id/youtube_playlist_thumb"
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_width="400dp"
+                android:layout_height="220dp"
                 android:layout_margin="@dimen/margin_8dp"
                 android:contentDescription="empty"
+                android:layout_gravity="center"
                 android:background="@color/black"
                 android:scaleType="fitXY" />
 
