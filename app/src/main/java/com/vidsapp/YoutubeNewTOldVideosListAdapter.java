@@ -50,7 +50,7 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
             holder.mYoutubePlaylistCount.setText("");
             //TimeDurationUtil.publishTimeNew(mYoutubePlaylistsList.get(position).getPublishedAt())
             holder.mYoutubePlaySubTitle.setText(mYoutubePlaylistsList.get(position).getTitle());
-            holder.mYoutubePlayDist.setText(mYoutubePlaylistsList.get(position).getDescription());
+            holder.mYoutubePlayDist.setText("");
             Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURL()).into(holder.mYoutubeThumb);
         }
     }
