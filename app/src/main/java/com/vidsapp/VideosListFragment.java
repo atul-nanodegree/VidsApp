@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.List;
@@ -32,6 +33,8 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
 
     private String vidsType, vidsIds;
 
+    private ProgressBar pBar;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -45,6 +48,8 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
         mDoclevelListAdapter = new YoutubeNewTOldVideosListAdapter(mContext);
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        pBar = (ProgressBar) rootView.findViewById(R.id.progressbar);
         return rootView;
     }
 
@@ -78,12 +83,19 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
             return youtubeNtOVideosListEntity;
         }
 
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pBar.setVisibility(View.VISIBLE);
+        }
+
         protected void onProgressUpdate(Integer... progress) {
 
         }
 
         protected void onPostExecute(YoutubeNtOVideosListEntity result) {
             videoListEntity = result;
+            pBar.setVisibility(View.GONE);
             if (videoListEntity != null) {
                 videoListItmeArrayList = videoListEntity.getItems();
 
