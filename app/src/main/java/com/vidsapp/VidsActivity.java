@@ -59,6 +59,8 @@ public class VidsActivity extends AppCompatActivity {
                         if (selectedCategory != null) {
                             if (selectedCategory.equalsIgnoreCase("Home remedies")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.home_remedies_list));
+                            } else if (selectedCategory.equalsIgnoreCase("Motivational")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.motivational_list));
                             }
                         }
                     }
@@ -93,6 +95,12 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Obesity")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.obesity_vids));
+                            } else if (selectedSubCategory.equalsIgnoreCase("Ujjwal Patni")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.motiv_ujjwal_patni_vids));
+                            } else if (selectedSubCategory.equalsIgnoreCase("Other motivational")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.motiv_others_vids));
                             }
                             if (listener != null) {
                                 listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
