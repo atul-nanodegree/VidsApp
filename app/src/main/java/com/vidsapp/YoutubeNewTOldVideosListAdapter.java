@@ -47,11 +47,11 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
 
         if (mYoutubePlaylistsList != null) {
 
-            holder.mYoutubePlaylistTitle.setText(mYoutubePlaylistsList.get(position).getChannelTitle());
+//            holder.mYoutubePlaylistTitle.setText(mYoutubePlaylistsList.get(position).getChannelTitle());
           //  holder.mYoutubePlaylistCount.setText("hhh");
             //TimeDurationUtil.publishTimeNew(mYoutubePlaylistsList.get(position).getPublishedAt())
             holder.mYoutubePlaySubTitle.setText(mYoutubePlaylistsList.get(position).getTitle());
-            holder.mYoutubePlayDist.setText("");
+//            holder.mYoutubePlayDist.setText("");
             Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURL()).into(holder.mYoutubeThumb);
         }
     }
@@ -66,24 +66,24 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView mYoutubePlaylistTitle = null;
-        private ImageView mYoutubePlaylistCount = null;
+//        private TextView mYoutubePlaylistTitle = null;
+        private ImageView mYoutubeShare = null;
         private TextView mYoutubePlaySubTitle = null;
-        private TextView mYoutubePlayDist = null;
+//        private TextView mYoutubePlayDist = null;
         private ImageView mYoutubeThumb = null;
         private ImageView mPlay = null;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            mYoutubePlaylistTitle = (TextView) itemView.findViewById(R.id.youtube_playlist_title);
-            mYoutubePlaylistCount = (ImageView) itemView.findViewById(R.id.youtube_playlist_count);
+//            mYoutubePlaylistTitle = (TextView) itemView.findViewById(R.id.youtube_playlist_title);
+            mYoutubeShare = (ImageView) itemView.findViewById(R.id.share);
             mYoutubePlaySubTitle = (TextView) itemView.findViewById(R.id.youtube_sub_title);
-            mYoutubePlayDist = (TextView) itemView.findViewById(R.id.youtube_discription);
+//            mYoutubePlayDist = (TextView) itemView.findViewById(R.id.youtube_discription);
             mYoutubeThumb = (ImageView) itemView.findViewById(R.id.youtube_playlist_thumb);
             mPlay = (ImageView) itemView.findViewById(R.id.play);
             mPlay.setOnClickListener(this);
-            mYoutubePlaylistCount.setOnClickListener(this);
+            mYoutubeShare.setOnClickListener(this);
         }
 
         @Override
@@ -93,7 +93,7 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
                 intent.putExtra("VIDEO_ID", mYoutubePlaylistsList.get(getAdapterPosition()).getId());
                 mContext.startActivity(intent);
             }
-          else  if (v.getId() == R.id.youtube_playlist_count) {
+          else  if (v.getId() == R.id.share) {
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "https://www.youtube.com/watch?v="+mYoutubePlaylistsList.get(getAdapterPosition()).getId());

@@ -95,6 +95,9 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Obesity")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.obesity_vids));
+                            } else if (selectedSubCategory.equalsIgnoreCase("Sandeep Maheshwari")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.motiv_sandeep_m_vids));
                             } else if (selectedSubCategory.equalsIgnoreCase("Ujjwal Patni")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_ujjwal_patni_vids));
