@@ -40,6 +40,7 @@
         <item>Hair fall</item>
     </string-array>
 
+
     <string-array name="high_bp_vids">
         <item>FA7bjZsMmo</item>
         <item>gyPplSxbHwY</item>
@@ -60,6 +61,9 @@
         <item>7tNnHW47gqA</item>
         <item>cM6yWrQLmjM</item>
         <item>LaTtxLxBquM</item>
+        <item>6KqkkSJ3cMk</item>
+        <item>Gz84wcP-f5o</item>
+        <item>L0lQk9T_t2A</item>
     </string-array>
 
     <string-array name="diabetes_vids">
@@ -125,6 +129,42 @@
         <item>WZwnnHKikWU</item>
         <item>LUrrN6cEBRQ</item>
         <item>X1TuhAn6C-g</item>
+    </string-array>
+
+    <string-array name="cholesterol_vids">
+        <item>0U7YHRW5dyc</item>
+        <item>Cxi361Wzxug</item>
+        <item>BBdMpu3VOCM</item>
+        <item>hsHRnKWmmhQ</item>
+        <item>OBe23AstJsA</item>
+        <item>UAQFrTrElzw</item>
+        <item>0fA-ibsLmZc</item>
+        <item>VTjGRigr1wo</item>
+        <item>mThRoHm4mlg</item>
+        <item>wZtTPyTgBfI</item>
+        <item>RKZ1Wk8tIZo</item>
+        <item>e0LqR87jkkM</item>
+        <item>rIHRmDjsvh4</item>
+        <item>c-CoZ1HgCEk</item>
+        <item>u18cH4WZWGo</item>
+        <item>8N-Gpyb70nw</item>
+        <item>BmDDD2arYoo</item>
+        <item>Sv_gu4rxN5o</item>
+        <item>K69HF4JPNVQ</item>
+        <item>yvCbwey35_U</item>
+        <item>loyKV3-S9MA</item>
+        <item>hJ8-zPL_qCg</item>
+        <item>mvgR3qBN4SE</item>
+        <item>MdSz0AiSqeE</item>
+        <item>BGA12BPYgt4</item>
+        <item>gsu8zkjcfDQ</item>
+        <item>5drNFzcT33g</item>
+        <item>mJXsjWGEx28</item>
+        <item>SZSi1Z6tsrU</item>
+        <item>PVpe3sRAm6k</item>
+        <item>Z9E4oBXFJ-Q</item>
+        <item>WT6yjejD5Hw</item>
+        <item>2ISBB2lKXyI</item>
     </string-array>
 
     <string-array name="beauty_tips_list">
@@ -265,6 +305,11 @@
         <item>zSZUFr26H7M</item>
         <item>2dSs2CeYH2Y</item>
         <item>38ejk8Kl1c8</item>
+    </string-array>
+
+    <string-array name="songs_list">
+        <item>Old songs</item>
+        <item>New songs</item>
     </string-array>
 
     <string-array name="live_news_channels">

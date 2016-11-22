@@ -63,6 +63,8 @@ public class VidsActivity extends AppCompatActivity {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.motivational_list));
                             } else if (selectedCategory.equalsIgnoreCase("Beauty tips")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.beauty_tips_list));
+                            } else if (selectedCategory.equalsIgnoreCase("Bollywood songs")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.songs_list));
                             } else if (selectedCategory.equalsIgnoreCase("News channels")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.live_news_channels));
                             }
@@ -103,6 +105,10 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.obesity_vids));
                                 videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("High cholesterol")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.cholesterol_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Sandeep Maheshwari")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_sandeep_m_vids));
@@ -135,6 +141,9 @@ public class VidsActivity extends AppCompatActivity {
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Herbal beauty tips")) {
                                 formatedVidsList = "UCbEVwbYCJpmJ0Kb69WOVD0w";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Old songs")) {
+                                formatedVidsList = "UC_A7K2dXFsTMAciGmnNxy-Q";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Live News")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
