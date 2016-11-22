@@ -61,6 +61,10 @@ public class VidsActivity extends AppCompatActivity {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.home_remedies_list));
                             } else if (selectedCategory.equalsIgnoreCase("Motivational")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.motivational_list));
+                            } else if (selectedCategory.equalsIgnoreCase("Beauty tips")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.beauty_tips_list));
+                            } else if (selectedCategory.equalsIgnoreCase("News channels")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.live_news_channels));
                             }
                         }
                     }
@@ -86,27 +90,59 @@ public class VidsActivity extends AppCompatActivity {
                                 return;
                             }
                             String formatedVidsList = null;
+                            String videoType = null;
                             if (selectedSubCategory.equalsIgnoreCase("High blood pressure")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.high_bp_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Diabetes")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.diabetes_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Obesity")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.obesity_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Sandeep Maheshwari")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_sandeep_m_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Him-eesh Madaan")) {
+                                formatedVidsList = "UCZQDF0x18Xe6RZayvod99zA";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Ujjwal Patni")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_ujjwal_patni_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("TS Madaan")) {
+                                formatedVidsList = "UCKjJXmZxk1SiTUQUB28KHpw";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Other motivational")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_others_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Arushi Jain")) {
+                                formatedVidsList = "UClg1BK5TSUqbepZH4PU_coQ";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Sneha")) {
+                                formatedVidsList = "UChl2JWlia8biiCBPxmWlhzA";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Rani")) {
+                                formatedVidsList = "UClexepNPmyQUCNapwOwS0cQ";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Trisha")) {
+                                formatedVidsList = "UC2QBCIyo_FbTlm0Rfh_6wkw";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Herbal beauty tips")) {
+                                formatedVidsList = "UCbEVwbYCJpmJ0Kb69WOVD0w";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Live News")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.news_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             }
                             if (listener != null) {
-                                listener.onFetchVideo(VidsApplUtil.TYPE_VIDEO, formatedVidsList);
+                                listener.onFetchVideo(videoType, formatedVidsList);
                             }
                         }
                     }

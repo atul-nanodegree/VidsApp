@@ -15,6 +15,7 @@
         <item>Kids</item>
         <item>Parenting</item>
         <item>Food recipes</item>
+        <item>News channels</item>
     </string-array>
 
     <string-array name="home_remedies_list">
@@ -126,11 +127,19 @@
         <item>X1TuhAn6C-g</item>
     </string-array>
 
+    <string-array name="beauty_tips_list">
+        <item>Arushi Jain</item>
+        <item>Sneha</item>
+        <item>Rani</item>
+        <item>Trisha</item>
+        <item>Herbal beauty tips</item>
+    </string-array>
+
     <string-array name="motivational_list">
         <item>Sandeep Maheshwari</item>
-        <item>Himesh Madaan</item>
+        <item>Him-eesh Madaan</item>
         <item>Ujjwal Patni</item>
-        <item>TS Taneja</item>
+        <item>TS Madaan</item>
         <item>Other motivational</item>
     </string-array>
 
@@ -258,4 +267,19 @@
         <item>38ejk8Kl1c8</item>
     </string-array>
 
+    <string-array name="live_news_channels">
+        <item>Live News</item>
+    </string-array>
+
+    <string-array name="news_vids">
+        <item>E9QXO5m_iS0</item>
+        <item>yCWbiLZqTyM</item>
+        <item>nAFBhWQPMU8</item>
+        <item>vdBesFFdgDs</item>
+        <item>Msgo-R3zZuM</item>
+        <item>1YnlX4CkPDY</item>
+        <item>kZZIdA0TsBo</item>
+        <item>kuY_VoVbAgA</item>
+        <item>y60wDzZt8yg</item>
+    </string-array>
 </resources>
