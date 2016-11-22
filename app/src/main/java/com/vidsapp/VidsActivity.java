@@ -152,7 +152,7 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = "UCYRW6OVzexqbSLqq4dAd0Zg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
-                                formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA/videos";
+                                formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Live News")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
