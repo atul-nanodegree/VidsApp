@@ -309,7 +309,9 @@
 
     <string-array name="songs_list">
         <item>Old songs</item>
-        <item>New songs</item>
+        <item>Latest songs</item>
+        <item>Remix</item>
+        <item>Hits of the week</item>
     </string-array>
 
     <string-array name="live_news_channels">

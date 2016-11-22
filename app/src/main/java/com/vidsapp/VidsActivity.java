@@ -145,6 +145,15 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Old songs")) {
                                 formatedVidsList = "UC_A7K2dXFsTMAciGmnNxy-Q";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Latest songs")) {
+                                formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Remix")) {
+                                formatedVidsList = "UCYRW6OVzexqbSLqq4dAd0Zg";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
+                                formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA/videos";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Live News")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.news_vids));
