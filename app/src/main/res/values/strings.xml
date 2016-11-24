@@ -8,7 +8,6 @@
         <item>Motivational</item>
         <item>Mythological</item>
         <item>Bollywood songs</item>
-        <item>Gazals</item>
         <item>Shayari</item>
         <item>Kavi sammelan</item>
         <item>Bollywood movies</item>
@@ -312,6 +311,8 @@
         <item>Latest songs</item>
         <item>Remix</item>
         <item>Hits of the week</item>
+        <item>Ghazals</item>
+        <item>Sharaabi songs</item>
     </string-array>
 
     <string-array name="live_news_channels">
@@ -329,4 +330,57 @@
         <item>kuY_VoVbAgA</item>
         <item>y60wDzZt8yg</item>
     </string-array>
+
+    <string-array name="ghazals_vids">
+        <item>vhGSdBH_HEs</item>
+        <item>FtWlYgG7qBQ</item>
+        <item>vmItxPZOVok</item>
+        <item>3WAHlzTAkPA</item>
+        <item>c3Wq4q7Yygg</item>
+        <item>DYsOIjw8Emg</item>
+        <item>9BQYgA75P2w</item>
+        <item>UUOn3IIy7G0</item>
+        <item>nJrysmaxUOE</item>
+        <item>phlGi6CyVA8</item>
+        <item>Wv0_QldgpkQ</item>
+        <item>szPmR9rZwh0</item>
+        <item>Muq56V5jwAA</item>
+        <item>u9NI_dhQ3sg</item>
+        <item>xUR1i_NY1pI</item>
+        <item>eIkrAyepuPM</item>
+        <item>G0gnSHIyhfE</item>
+        <item>lEAJj0js4ug</item>
+        <item>TXZZvt6uIaM</item>
+        <item>WJ1HyylpqCw</item>
+        <item>TnWnaVO0P60</item>
+        <item>DLyKuOEUVpk</item>
+        <item>dbDNt9Oll0A</item>
+        <item>E08DZkSc0S8</item>
+        <item>GqFr8Z7O2oI</item>
+        <item>sTZBQAwemwo</item>
+        <item>GBF2RsgDMFA</item>
+        <item>LVet1u-HeZQ</item>
+        <item>XnNso1wsk7g</item>
+        <item>B2fXhb5MQnY</item>
+        <item>4MR1Hx8jRqQ</item>
+        <item>L3ANLFWIORE</item>
+    </string-array>
+
+    <string-array name="sharaabi_vids">
+        <item>STQGNalWcoc</item>
+        <item>OKpq6oJFwww</item>
+        <item>ZHq-pNYQ3gI</item>
+        <item>g0w40gAKISk</item>
+        <item>imZQhVkmu4Y</item>
+        <item>adOgxemdB38</item>
+        <item>-uwZyjl_Jj8</item>
+        <item>qfdecxtdm6s</item>
+        <item>IFTGi_BU39g</item>
+        <item>mNSDKkK_6KE</item>
+        <item>NSti6kJ8tjU</item>
+        <item>MDFm7jl1WMk</item>
+        <item>wooUVhiozl0</item>
+        <item>bauboaA_ejc</item>
+    </string-array>
+
 </resources>

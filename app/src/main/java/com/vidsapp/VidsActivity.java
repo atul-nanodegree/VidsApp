@@ -154,6 +154,14 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Ghazals")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.ghazals_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Sharaabi songs")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.sharaabi_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Live News")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.news_vids));
