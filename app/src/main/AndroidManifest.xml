@@ -27,6 +27,18 @@
         <activity
             android:name=".YoutubePlayerActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="com.vidsapp.YoutubePlaylistActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName="com.vidsapp.VidsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vidsapp.VidsActivity" />
+        </activity>
+
+        <activity
+            android:name="com.vidsapp.YoutubePlaylistPlayerActivity"
+            android:screenOrientation="landscape" />
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c571a009232e5f2b1bd8c00fc7863ee455548434" />
