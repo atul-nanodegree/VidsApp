@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
- * Created by Vinay Sasalatti on 13/01/16.
+ * Created by atul.
  */
 public class YoutubePlayListsAdapter extends RecyclerView.Adapter<YoutubePlayListsAdapter.ViewHolder> {
 

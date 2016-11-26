@@ -1,7 +1,7 @@
 package com.vidsapp;
 
 /**
- * Created by atul on 12/01/16.
+ * Created by atul.
  */
 public class YoutubeVideoListItemEntity {
 

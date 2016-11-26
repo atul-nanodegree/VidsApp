@@ -3,7 +3,7 @@ package com.vidsapp;
 import com.google.api.client.util.DateTime;
 
 /**
- * Created by atul on 12/01/16.
+ * Created by atul.
  */
 public class YoutubePlayListItemEntity {
 

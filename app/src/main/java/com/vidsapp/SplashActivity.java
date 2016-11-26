@@ -8,7 +8,9 @@ import android.view.WindowManager;
 
 import com.vidsapp.VidsActivity;
 
-
+/**
+ * Created by atul.
+ */
 public class SplashActivity extends Activity {
 
     /**
