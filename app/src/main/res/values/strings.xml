@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">VidsApp</string>
     <string name="action_settings">Settings</string>
+    <string name="empty">empty</string>
+    <string name="videos">Videos</string>
+    <string name="play_all">Play all</string>
 
     <string-array name="vids_category">
         <item>Home remedies</item>
