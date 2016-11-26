@@ -5,6 +5,8 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.PlaylistItem;
+import com.google.api.services.youtube.model.PlaylistItemListResponse;
 import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.Video;
@@ -25,7 +27,13 @@ public class ApiYoutube {
     private YouTube mYoutube;
     private YouTube.Search.List mQueryNtOVideoList;
     YouTube.Videos.List mQueryVideoList;
+    private YoutubePlayListEntity youtubePlayListEntity=null;
+    private YoutubeVideoListEntity youtubeVideoListEntity=null;
     private YoutubeNtOVideosListEntity youtubeNtOVideosListEntity=null;
+
+    private YouTube.Search.List mQueryPlayList;
+    private YouTube.PlaylistItems.List mQueryVideos;
+
 
     /**
      * Constructor modified to accept url and any other params
@@ -49,13 +57,51 @@ public class ApiYoutube {
             } else if (type.equals("channel")) {
                 youtubeNtOVideosListEntity = videosNewToOld(requestValue);
             }
+
+            else if (type.equals("playlist")) {
+                youtubePlayListEntity = searchPlayList(requestValue);
+            }
         }
 
         return youtubeNtOVideosListEntity;
     }
 
+    public YoutubePlayListEntity intiateAPICallPlayList(String type,String requestValue){
+
+        mYoutube = new YouTube.Builder(new NetHttpTransport(),
+                new JacksonFactory(), new HttpRequestInitializer() {
+            @Override
+            public void initialize(HttpRequest hr) throws IOException {}
+        }).setApplicationName("VidsApp").build();
+
+        if (type != null) {
+
+            if (type.equals("playlist")) {
+                youtubePlayListEntity = searchPlayList(requestValue);
+            }
+        }
+
+        return youtubePlayListEntity;
+    }
 
 
+    public YoutubeVideoListEntity intiateAPICallPlayListVideos(String type,String requestValue){
+
+        mYoutube = new YouTube.Builder(new NetHttpTransport(),
+                new JacksonFactory(), new HttpRequestInitializer() {
+            @Override
+            public void initialize(HttpRequest hr) throws IOException {}
+        }).setApplicationName("VidsApp").build();
+
+        if (type != null) {
+
+            if (type.equals("playlistvideo")) {
+                youtubeVideoListEntity = searchPlaylistVideos(requestValue);
+            }
+        }
+
+        return youtubeVideoListEntity;
+    }
 
 
 
@@ -180,8 +226,134 @@ public class ApiYoutube {
     }
 
 
+//playlist code
+
+    public YoutubePlayListEntity searchPlayList(String query){
+        YoutubePlayListEntity playListItems = null;
+        SearchListResponse response = null;
+        try{
+            mQueryPlayList = mYoutube.search().list("id,snippet");
+            mQueryPlayList.setKey(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY);
+            mQueryPlayList.setType("playlist");
+            //to fetch medium ,high,default thumbnail set the snippet mentioned below
+            //snippet/thumbnails/medium/url,snippet/thumbnails/default/url,snippet/thumbnails/high/url
+            mQueryPlayList.setFields("items(id/playlistId,snippet/title,snippet/description,snippet/publishedAt,snippet/liveBroadcastContent,snippet/thumbnails/medium/url,snippet/thumbnails/default/url,snippet/thumbnails/high/url)");
+            //max limit to fetch videos is 50 and default in 5
+            mQueryPlayList.setMaxResults((long) 50);
+            mQueryPlayList.setChannelId("UC55IWqFLDH1Xp7iu1_xknRA");
+           // mQueryPlayList.setQ(query);
+            mQueryPlayList.setOrder("date");
+            response = mQueryPlayList.execute();
+            playListItems = parseSearchListData(response);
+        }catch(IOException e){
+            return null;
+        }
+        return playListItems;
+    }
+
+    private YoutubePlayListEntity parseSearchListData(SearchListResponse response) {
+        List<SearchResult> results = null;
+        YoutubePlayListEntity playListItems = null;
+        List<YoutubePlayListItemEntity> items = null;
+        try {
+            if (response != null) {
+                results = response.getItems();
+
+                playListItems = new YoutubePlayListEntity();
+                items = new ArrayList<YoutubePlayListItemEntity>();
+                for (SearchResult result : results) {
+                    YoutubePlayListItemEntity item = new YoutubePlayListItemEntity();
+                    item.setTitle(result.getSnippet().getTitle());
+                    item.setDescription(result.getSnippet().getDescription());
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null){
+                        item.setThumbnailURLHigh(result.getSnippet().getThumbnails().getHigh().getUrl());
+                    }
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null){
+                        item.setThumbnailURLMedium(result.getSnippet().getThumbnails().getMedium().getUrl());
+                    }
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getDefault()!=null){
+                        item.setThumbnailURLDefault(result.getSnippet().getThumbnails().getDefault().getUrl());
+                    }
+
+                    item.setId(result.getId().getPlaylistId());
+                    item.setPublishedAt(result.getSnippet().getPublishedAt());
+                    item.setLiveBroadcastContent(result.getSnippet().getLiveBroadcastContent());
+                    items.add(item);
+
+                }
+                playListItems.setItems(items);
+                if (response.getPageInfo() != null && response.getPageInfo().getTotalResults() != null) {
+                    playListItems.setTotalPlayListCount(response.getPageInfo().getTotalResults());
+                }
+                if (response.getNextPageToken() != null) {
+                    playListItems.setNextPageToken(response.getNextPageToken());
+                }
+            }
+        }finally {
+            results = null;
+        }
+        return playListItems;
+    }
+
+//playlist videos
+
+    public YoutubeVideoListEntity searchPlaylistVideos(String playListId){
+        PlaylistItemListResponse response = null;
+        YoutubeVideoListEntity videoListItems = null;
+        try{
+            mQueryVideos = mYoutube.playlistItems().list("id,snippet");
+            mQueryVideos.setKey(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY);
+            mQueryVideos.setPlaylistId(playListId);
+            //queryVideos.setFields("items(id/resourceId/videoId,snippet/title,snippet/description,snippet/publishedAt,snippet/thumbnails/medium/url,snippet/thumbnails/medium/width,snippet/thumbnails/medium/height)");
+            //"PLHLkfcOqwa-wZqZ1ktkEwUrK7nJHCGWiy"
+            mQueryVideos.setMaxResults((long) 50);
+            response = mQueryVideos.execute();
+            videoListItems = parseVideoListData(response);
 
 
+        }catch(IOException e){
+        }finally {
+            response = null;
+        }
+        return videoListItems;
+    }
 
+    private YoutubeVideoListEntity parseVideoListData(PlaylistItemListResponse response) {
+        List<PlaylistItem> results = null;
+        YoutubeVideoListEntity videoListItems = null;
+        List<YoutubeVideoListItemEntity> items = null;
+        try {
+            if (response != null) {
+                results = response.getItems();
+                videoListItems = new YoutubeVideoListEntity();
+                items = new ArrayList<YoutubeVideoListItemEntity>();
+
+                for (PlaylistItem result : results) {
+                    YoutubeVideoListItemEntity item = new YoutubeVideoListItemEntity();
+                    item.setTitle(result.getSnippet().getTitle());
+                    item.setDescription(result.getSnippet().getDescription());
+                    item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                    item.setId(result.getSnippet().getResourceId().getVideoId());
+                    //item.setNextPageToken(result.);
+                    item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());
+                    item.setVideoThumH(result.getSnippet().getThumbnails().getMedium().getHeight());
+                    //item.setTotalVideos(result.);
+                    items.add(item);
+                }
+
+                videoListItems.setItems(items);
+
+                if (response.getNextPageToken() != null) {
+                    videoListItems.setNextPageToken(response.getNextPageToken());
+                }
+                if (response.getPageInfo() != null && response.getPageInfo().getTotalResults() != null) {
+                    videoListItems.setTotalVideos(response.getPageInfo().getTotalResults());
+                }
+            }
+        }finally {
+            results = null;
+        }
+        return videoListItems;
+    }
 
 }
