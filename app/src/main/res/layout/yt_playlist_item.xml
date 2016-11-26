@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/youtube_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/forgot_password_bg">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:layout_marginLeft="@dimen/margin_8dp"
+        android:layout_marginRight="@dimen/margin_8dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/youtube_playlist_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_7dp"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:textColor="@color/black"
+             />
+
+        <TextView
+            android:id="@+id/youtube_playlist_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_7dp"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:textColor="@color/title_color"
+            />
+
+        <TextView
+            android:id="@+id/youtube_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/youtube_playlist_title"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+             />
+
+        <TextView
+            android:id="@+id/youtube_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/youtube_sub_title"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:visibility="gone"
+            android:textColor="@color/title_color"
+           />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/youtube_discription"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/youtube_playlist_thumb"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_margin="@dimen/margin_8dp"
+                android:background="@color/black"
+                android:contentDescription="@string/empty"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/empty"
+                android:background="@drawable/ic_play_big"
+                android:padding="@dimen/margin_20dp" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
