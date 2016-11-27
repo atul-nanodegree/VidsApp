@@ -27,7 +27,7 @@ public class VidsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vids);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setLogo(R.drawable.ic_launcher);
+//        toolbar.setLogo(R.drawable.icon);
         mMainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
