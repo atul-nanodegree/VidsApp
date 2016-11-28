@@ -143,7 +143,18 @@ public class ApiYoutube {
                     YoutubeNtOVideosListItemEntity item = new YoutubeNtOVideosListItemEntity();
                     item.setTitle(result.getSnippet().getTitle());
                     item.setDescription(result.getSnippet().getDescription());
-                    item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null && result.getSnippet().getThumbnails().getHigh().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getHigh().getUrl());
+
+                    }
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+
+                    }
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getDefault()!=null && result.getSnippet().getThumbnails().getDefault().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+
+                    }
                     item.setId(result.getId().getVideoId());
                     item.setPublishedAt(result.getSnippet().getPublishedAt());
                     item.setLiveBroadcastContent(result.getSnippet().getLiveBroadcastContent());
@@ -203,7 +214,18 @@ public class ApiYoutube {
                     YoutubeNtOVideosListItemEntity item = new YoutubeNtOVideosListItemEntity();
                     item.setTitle(result.getSnippet().getTitle());
                     item.setDescription(result.getSnippet().getDescription());
-                    item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null && result.getSnippet().getThumbnails().getHigh().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getHigh().getUrl());
+
+                    }
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+
+                    }
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getDefault()!=null && result.getSnippet().getThumbnails().getDefault().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+
+                    }
                     item.setId(result.getId());
                     item.setPublishedAt(result.getSnippet().getPublishedAt());
                     item.setLiveBroadcastContent(result.getSnippet().getLiveBroadcastContent());
@@ -240,7 +262,7 @@ public class ApiYoutube {
             mQueryPlayList.setFields("items(id/playlistId,snippet/title,snippet/description,snippet/publishedAt,snippet/liveBroadcastContent,snippet/thumbnails/medium/url,snippet/thumbnails/default/url,snippet/thumbnails/high/url)");
             //max limit to fetch videos is 50 and default in 5
             mQueryPlayList.setMaxResults((long) 50);
-            mQueryPlayList.setChannelId("UC55IWqFLDH1Xp7iu1_xknRA");
+            mQueryPlayList.setChannelId(query);
            // mQueryPlayList.setQ(query);
             mQueryPlayList.setOrder("date");
             response = mQueryPlayList.execute();
@@ -266,12 +288,12 @@ public class ApiYoutube {
                     item.setTitle(result.getSnippet().getTitle());
                     item.setDescription(result.getSnippet().getDescription());
                     if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null){
-                        item.setThumbnailURLHigh(result.getSnippet().getThumbnails().getHigh().getUrl());
+                        item.setThumbnailURLDefault(result.getSnippet().getThumbnails().getHigh().getUrl());
                     }
-                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null){
-                        item.setThumbnailURLMedium(result.getSnippet().getThumbnails().getMedium().getUrl());
+                   else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null){
+                        item.setThumbnailURLDefault(result.getSnippet().getThumbnails().getMedium().getUrl());
                     }
-                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getDefault()!=null){
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getDefault()!=null){
                         item.setThumbnailURLDefault(result.getSnippet().getThumbnails().getDefault().getUrl());
                     }
 
@@ -332,7 +354,14 @@ public class ApiYoutube {
                     YoutubeVideoListItemEntity item = new YoutubeVideoListItemEntity();
                     item.setTitle(result.getSnippet().getTitle());
                     item.setDescription(result.getSnippet().getDescription());
-                    item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null && result.getSnippet().getThumbnails().getHigh().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getHigh().getUrl());
+
+                    }
+                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
+                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+
+                    }
                     item.setId(result.getSnippet().getResourceId().getVideoId());
                     //item.setNextPageToken(result.);
                     item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());

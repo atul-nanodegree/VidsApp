@@ -52,9 +52,9 @@ public class YoutubePlayListsAdapter extends RecyclerView.Adapter<YoutubePlayLis
 
             holder.mYoutubePlaylistTitle.setText("# " + mYoutubePlaylistsList.get(position).getTitle());
             holder.mYoutubePlaylistCount.setText("");
-            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLMedium()).into(holder.mYoutubeThumb);
-            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLMedium()).into(holder.mYoutubePicOneIv);
-            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLMedium()).into(holder.mYoutubePicTwoIv);
+            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLDefault()).into(holder.mYoutubeThumb);
+            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLDefault()).into(holder.mYoutubePicOneIv);
+            Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLDefault()).into(holder.mYoutubePicTwoIv);
         }
     }
 
