@@ -17,13 +17,15 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
+import com.vidsapp.util.VidsApplUtil;
+
 import java.util.List;
 
 
 /**
  * Created by atul.
  */
-public class PlayListFragment extends Fragment {
+public class PlayListFragment extends Fragment implements VidsActivity.FetchVidsListener {
 
 
     private List<YoutubePlayListItemEntity> playListItmeArrayList = null;
@@ -31,11 +33,14 @@ public class PlayListFragment extends Fragment {
     private YoutubePlayListEntity playListEntity = null;
     private RecyclerView mRecyclerView;
     private YoutubePlayListsAdapter mDoclevelListAdapter;
-
+    private String vidsType, vidsIds;
     private Context mContext;
     private static final String TAG = "PlayListFragment.class";
     private ProgressBar pBar;
 
+    public PlayListFragment() {
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,16 +52,13 @@ public class PlayListFragment extends Fragment {
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.youtube_playlists_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-
+        VidsActivity activity = (VidsActivity) mContext;
+        activity.setFetchPlListener(this);
         mDoclevelListAdapter = new YoutubePlayListsAdapter(mContext);
         pBar = (ProgressBar) rootView.findViewById(R.id.progressbar);
         {
             mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-            if (NetworkUtil.isConnected(mContext)) {
-                new YoutubeTask().execute();
-            }
-
             return rootView;
         }
 
@@ -73,13 +75,28 @@ public class PlayListFragment extends Fragment {
         viewGroup.addView(view);
     }
 
+    @Override
+    public void onFetchVideo(String vidsType, String vidsIds) {
+
+    }
+    @Override
+    public void onFetchPl(String vidsType, String plIds) {
+        this.vidsType = vidsType;
+        this.vidsIds = plIds;
+        if (NetworkUtil.isConnected(mContext)) {
+            if(VidsApplUtil.TYPE_CHANNEL.equals(vidsType)){
+                new YoutubeTask().execute();
+
+            }
+        }
+    }
 
     private class YoutubeTask extends AsyncTask<String, Integer, YoutubePlayListEntity> {
         protected YoutubePlayListEntity doInBackground(String... urls) {
             ApiYoutube a=new ApiYoutube();
 //            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
             //YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("channel","UCDS9hpqUEXsXUIcf0qDcBIA");
-            YoutubePlayListEntity youtubePlayListEntity = a.intiateAPICallPlayList("playlist","zeetv" );
+            YoutubePlayListEntity youtubePlayListEntity = a.intiateAPICallPlayList("playlist",vidsIds );
 
             return youtubePlayListEntity;
         }

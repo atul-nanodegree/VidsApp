@@ -20,6 +20,8 @@ public class VidsActivity extends AppCompatActivity {
     private Spinner categorySpinner, subCategorySpinner;
     private  CoordinatorLayout mMainCoordinatorLayout;
     private Fragment mVideoFragment;
+    private Fragment mPlayListFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,10 @@ public class VidsActivity extends AppCompatActivity {
 
         initializeVidsCategory();
         mVideoFragment = new VideosListFragment();
+        mPlayListFragment = new PlayListFragment();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_frame, mPlayListFragment, mPlayListFragment.getClass().getSimpleName()).commit();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_frame, mVideoFragment, mVideoFragment.getClass().getSimpleName()).commit();
 
@@ -154,6 +160,7 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
+
                             } else if (selectedSubCategory.equalsIgnoreCase("Ghazals")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.ghazals_vids));
@@ -167,9 +174,21 @@ public class VidsActivity extends AppCompatActivity {
                                         getResources().getStringArray(R.array.news_vids));
                                 videoType = VidsApplUtil.TYPE_VIDEO;
                             }
-                            if (listener != null) {
-                                listener.onFetchVideo(videoType, formatedVidsList);
+                            if(VidsApplUtil.TYPE_VIDEO.equals(videoType)){
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_frame, mVideoFragment, mVideoFragment.getClass().getSimpleName()).commit();
+                                if (listener != null) {
+                                    listener.onFetchVideo(videoType, formatedVidsList);
+                                }
                             }
+                            else if(VidsApplUtil.TYPE_CHANNEL.equals(videoType)){
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_frame, mPlayListFragment, mPlayListFragment.getClass().getSimpleName()).commit();
+                                if (listenerPl != null) {
+                                    listenerPl.onFetchPl(videoType, formatedVidsList);
+                                }
+                            }
+
                         }
                     }
                     public void onNothingSelected(AdapterView<?> parent) {
@@ -210,11 +229,19 @@ public class VidsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private FetchVidsListener listener;
+    private FetchVidsListener listenerPl;
+
     public void setFetchVideoListener(FetchVidsListener fvListener) {
         this.listener = fvListener;
+    }
+    public void setFetchPlListener(FetchVidsListener fvListener) {
+        this.listenerPl = fvListener;
     }
 
     public interface FetchVidsListener {
         public void onFetchVideo(String vidsType, String vidsIds);
+        public void onFetchPl(String vidsType, String plIds);
+
     }
+
 }

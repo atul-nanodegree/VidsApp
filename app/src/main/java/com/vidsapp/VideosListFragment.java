@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.vidsapp.util.VidsApplUtil;
+
 import java.util.List;
 
 
@@ -73,8 +75,16 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
         this.vidsType = vidsType;
         this.vidsIds = vidsIds;
         if (NetworkUtil.isConnected(mContext)) {
-            new YoutubeTask().execute();
+            if(VidsApplUtil.TYPE_VIDEO.equals(vidsType)){
+                new YoutubeTask().execute();
+
+            }
         }
+    }
+
+    @Override
+    public void onFetchPl(String vidsType, String plIds) {
+
     }
 
     private class YoutubeTask extends AsyncTask<String, Integer, YoutubeNtOVideosListEntity> {

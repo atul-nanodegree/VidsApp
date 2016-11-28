@@ -33,9 +33,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
     private RecyclerView mRecyclerView;
     private YoutubeVideosListAdapter mDoclevelListAdapter;
 
-    private TextView mPlayListName;
-    private TextView mPlaylistDis;
-    private TextView mPlaylistCount;
+
     private TextView mPlaylistAll;
     private String mId;
     private List<String> videoItemDuration = null;
@@ -52,9 +50,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.youtube_playlist_recyclerview);
 
-        mPlayListName = (TextView) findViewById(R.id.playlist_name);
-        mPlaylistDis = (TextView) findViewById(R.id.playlist_dis);
-        mPlaylistCount = (TextView) findViewById(R.id.video_count);
+
         mPlaylistAll = (TextView) findViewById(R.id.playall);
         pBar = (ProgressBar) findViewById(R.id.progressbar);
 
@@ -68,8 +64,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
         if (getIntent().getStringExtra(APITags.ID) != null) {
 
             mId = getIntent().getStringExtra(APITags.ID);
-            mPlayListName.setText("# " + getIntent().getStringExtra(APITags.NAME));
-            mPlaylistDis.setText(getIntent().getStringExtra(APITags.DESCRIPTION));
+
 
             if (NetworkUtil.isConnected(YoutubePlaylistActivity.this)) {
                 new YoutubeTask().execute();
