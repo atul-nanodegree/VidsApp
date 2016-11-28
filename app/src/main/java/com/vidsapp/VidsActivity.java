@@ -154,8 +154,11 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Latest songs")) {
                                 formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-                            } else if (selectedSubCategory.equalsIgnoreCase("Remix")) {
-                                formatedVidsList = "UCYRW6OVzexqbSLqq4dAd0Zg";
+                            } else if (selectedSubCategory.equalsIgnoreCase("Remix jukebox")) {
+                                formatedVidsList = "UCbMtyOUNOQKWOGyoCAlNicw";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("New dhamaka")) {
+                                formatedVidsList = "UCq-Fj5jknLsUf-MWSy4_brA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
