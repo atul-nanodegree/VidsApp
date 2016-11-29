@@ -314,7 +314,8 @@
     <string-array name="songs_list">
         <item>Old songs</item>
         <item>Latest songs</item>
-        <item>Remix</item>
+        <item>New dhamaka</item>
+        <item>Remix jukebox</item>
         <item>Hits of the week</item>
         <item>Ghazals</item>
         <item>Sharaabi songs</item>
