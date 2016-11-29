@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">VidsApp</string>
+    <string name="playlist">PlayList</string>
+
     <string name="action_settings">Settings</string>
     <string name="empty">empty</string>
     <string name="videos">Videos</string>
@@ -316,6 +318,7 @@
         <item>Hits of the week</item>
         <item>Ghazals</item>
         <item>Sharaabi songs</item>
+        <item>Bollywood Movie</item>
     </string-array>
 
     <string-array name="live_news_channels">

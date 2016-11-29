@@ -9,6 +9,8 @@ public class VidsApplUtil {
 
     public static String TYPE_VIDEO = "video";
     public static String TYPE_CHANNEL = "channel";
+    public static String TYPE_PLAYLIST = "playlist";
+
 
     public static String formatVidsList(String[] vids) {
         StringBuffer formatedVids = new StringBuffer();

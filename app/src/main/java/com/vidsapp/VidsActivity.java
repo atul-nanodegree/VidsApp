@@ -161,6 +161,11 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
 
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Bollywood Movie")) {
+                                formatedVidsList = "PLt2Bo1TXSU80Wqpz96zudjLp3xQNCEiEY,PLeo6eDZGP-ml04Y1IH-vrOq7KkB8yIBxn";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+
                             } else if (selectedSubCategory.equalsIgnoreCase("Ghazals")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.ghazals_vids));
@@ -181,7 +186,7 @@ public class VidsActivity extends AppCompatActivity {
                                     listener.onFetchVideo(videoType, formatedVidsList);
                                 }
                             }
-                            else if(VidsApplUtil.TYPE_CHANNEL.equals(videoType)){
+                            else if(VidsApplUtil.TYPE_CHANNEL.equals(videoType) || VidsApplUtil.TYPE_PLAYLIST.equals(videoType)){
                                 getSupportFragmentManager().beginTransaction()
                                         .replace(R.id.fragment_frame, mPlayListFragment, mPlayListFragment.getClass().getSimpleName()).commit();
                                 if (listenerPl != null) {
