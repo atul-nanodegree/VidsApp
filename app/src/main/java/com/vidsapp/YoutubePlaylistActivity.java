@@ -35,6 +35,8 @@ public class YoutubePlaylistActivity extends  BaseActivity {
 
 
     private TextView mPlaylistAll;
+    private TextView mPlaylistTitle;
+
     private String mId;
     private List<String> videoItemDuration = null;
     private ProgressBar pBar;
@@ -52,6 +54,8 @@ public class YoutubePlaylistActivity extends  BaseActivity {
 
 
         mPlaylistAll = (TextView) findViewById(R.id.playall);
+        mPlaylistTitle = (TextView) findViewById(R.id.video_count);
+
         pBar = (ProgressBar) findViewById(R.id.progressbar);
 
         mDoclevelListAdapter = new YoutubeVideosListAdapter(this);
@@ -64,7 +68,10 @@ public class YoutubePlaylistActivity extends  BaseActivity {
         if (getIntent().getStringExtra(APITags.ID) != null) {
 
             mId = getIntent().getStringExtra(APITags.ID);
+            if (getIntent().getStringExtra(APITags.PLAYLIST_TITLE) != null) {
 
+                mPlaylistTitle.setText(getIntent().getStringExtra(APITags.PLAYLIST_TITLE));
+            }
 
             if (NetworkUtil.isConnected(YoutubePlaylistActivity.this)) {
                 new YoutubeTask().execute();

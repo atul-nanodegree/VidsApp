@@ -50,7 +50,7 @@ public class YoutubePlayListsAdapter extends RecyclerView.Adapter<YoutubePlayLis
 
         if (mYoutubePlaylistsList != null) {
 
-            holder.mYoutubePlaylistTitle.setText("# " + mYoutubePlaylistsList.get(position).getTitle());
+            holder.mYoutubePlaylistTitle.setText( mYoutubePlaylistsList.get(position).getTitle());
             holder.mYoutubePlaylistCount.setText("");
             Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLDefault()).into(holder.mYoutubeThumb);
             Picasso.with(mContext).load(mYoutubePlaylistsList.get(position).getThumbnailURLDefault()).into(holder.mYoutubePicOneIv);
@@ -99,6 +99,7 @@ public class YoutubePlayListsAdapter extends RecyclerView.Adapter<YoutubePlayLis
                 intent.putExtra(APITags.ID, mYoutubePlaylistsList.get(getAdapterPosition()).getId());
                 intent.putExtra(APITags.NAME, mYoutubePlaylistsList.get(getAdapterPosition()).getTitle());
                 intent.putExtra(APITags.DESCRIPTION, mYoutubePlaylistsList.get(getAdapterPosition()).getDescription());
+                intent.putExtra(APITags.PLAYLIST_TITLE, mYoutubePlaylistsList.get(getAdapterPosition()).getTitle());
                 ((Activity) mContext).startActivityForResult(intent, 20001);
             }
 

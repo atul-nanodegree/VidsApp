@@ -17,23 +17,40 @@
 
     <TextView
         android:id="@+id/video_count"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_below="@+id/toolbar"
         android:layout_marginLeft="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_20dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="@string/videos"
-        android:textColor="@color/black" />
+        android:textColor="@android:color/holo_red_light" />
 
     <TextView
         android:id="@+id/playall"
+        android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_20dp"
         android:text="@string/play_all"
-        android:textColor="@color/title_color" />
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_light" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/youtube_playlist_recyclerview"
