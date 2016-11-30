@@ -310,10 +310,12 @@
     </string-array>
 
     <string-array name="songs_list">
-        <item>Old songs</item>
-        <item>Latest songs</item>
-        <item>New dhamaka</item>
+        <item>Old jukebox</item>
+        <item>Latest jukebox</item>
+        <item>Sune ansune gaane</item>
         <item>Remix jukebox</item>
+        <item>Filmi melody</item>
+        <item>Pop Chartbusters</item>
         <item>Hits of the week</item>
         <item>Ghazals</item>
         <item>Sharaabi songs</item>

@@ -9,10 +9,10 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_8dp"
-        android:layout_marginLeft="@dimen/margin_8dp"
-        android:layout_marginRight="@dimen/margin_8dp"
-        android:background="#B0BEC5">
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#E0E0E0">
 
         <!--<TextView-->
             <!--android:id="@+id/youtube_playlist_title"-->
@@ -43,7 +43,7 @@
                 android:shadowDy="3"
                 android:shadowRadius="2"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView
