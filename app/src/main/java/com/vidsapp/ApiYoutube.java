@@ -382,12 +382,13 @@ public class ApiYoutube {
                     }
                     else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
                         item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                        item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());
+                        item.setVideoThumH(result.getSnippet().getThumbnails().getMedium().getHeight());
 
                     }
                     item.setId(result.getSnippet().getResourceId().getVideoId());
                     //item.setNextPageToken(result.);
-                    item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());
-                    item.setVideoThumH(result.getSnippet().getThumbnails().getMedium().getHeight());
+
                     //item.setTotalVideos(result.);
                     items.add(item);
                 }
