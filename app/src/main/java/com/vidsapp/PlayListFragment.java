@@ -84,10 +84,9 @@ public class PlayListFragment extends Fragment implements VidsActivity.FetchVids
         this.vidsType = vidsType;
         this.vidsIds = plIds;
         if (NetworkUtil.isConnected(mContext)) {
-            if(VidsApplUtil.TYPE_CHANNEL.equals(vidsType)){
                 new YoutubeTask().execute();
 
-            }
+
         }
     }
 
@@ -96,8 +95,15 @@ public class PlayListFragment extends Fragment implements VidsActivity.FetchVids
             ApiYoutube a=new ApiYoutube();
 //            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
             //YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("channel","UCDS9hpqUEXsXUIcf0qDcBIA");
-            YoutubePlayListEntity youtubePlayListEntity = a.intiateAPICallPlayList("playlist",vidsIds );
+            YoutubePlayListEntity youtubePlayListEntity=null;
+            if(VidsApplUtil.TYPE_CHANNEL.equals(vidsType)){
+                 youtubePlayListEntity = a.intiateAPICallPlayList("playlist",vidsIds );
 
+            }
+            else if(VidsApplUtil.TYPE_PLAYLIST.equals(vidsType)){
+                 youtubePlayListEntity = a.intiateAPICallPlayListCustom("playlistcustom",vidsIds );
+
+            }
             return youtubePlayListEntity;
         }
 
