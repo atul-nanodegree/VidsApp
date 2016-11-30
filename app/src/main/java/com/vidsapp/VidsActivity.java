@@ -148,17 +148,23 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Herbal beauty tips")) {
                                 formatedVidsList = "UCbEVwbYCJpmJ0Kb69WOVD0w";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-                            } else if (selectedSubCategory.equalsIgnoreCase("Old songs")) {
+                            } else if (selectedSubCategory.equalsIgnoreCase("Old jukebox")) {
                                 formatedVidsList = "UC_A7K2dXFsTMAciGmnNxy-Q";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-                            } else if (selectedSubCategory.equalsIgnoreCase("Latest songs")) {
+                            } else if (selectedSubCategory.equalsIgnoreCase("Latest jukebox")) {
                                 formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Remix jukebox")) {
                                 formatedVidsList = "UCbMtyOUNOQKWOGyoCAlNicw";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-                            } else if (selectedSubCategory.equalsIgnoreCase("New dhamaka")) {
-                                formatedVidsList = "UCq-Fj5jknLsUf-MWSy4_brA";
+                            } else if (selectedSubCategory.equalsIgnoreCase("Filmi melody")) {
+                                formatedVidsList = "UCP6uH_XlsxrXwZQ4DlqbqPg";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Pop Chartbusters")) {
+                                formatedVidsList = "UCzL6rJhkoXkIt0fCv9T9_uA";
+                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Sune ansune gaane")) {
+                                formatedVidsList = "UCtW7qWjpCZ8zps-Cf2NF26w";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
