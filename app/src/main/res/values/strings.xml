@@ -312,7 +312,11 @@
     </string-array>
 
     <string-array name="songs_list">
-        <item>Old jukebox</item>
+        <item>Romantic melodies</item>
+        <item>Sad melodies</item>
+        <item>Soft melodies</item>
+        <item>Wedding special</item>
+        <item>Choice of Punjabi</item>
         <item>Latest jukebox</item>
         <item>Sune ansune gaane</item>
         <item>Remix jukebox</item>

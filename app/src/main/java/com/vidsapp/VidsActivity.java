@@ -148,9 +148,33 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Herbal beauty tips")) {
                                 formatedVidsList = "UCbEVwbYCJpmJ0Kb69WOVD0w";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-                            } else if (selectedSubCategory.equalsIgnoreCase("Old jukebox")) {
-                                formatedVidsList = "UC_A7K2dXFsTMAciGmnNxy-Q";
-                                videoType = VidsApplUtil.TYPE_CHANNEL;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Romantic melodies")) {
+                                formatedVidsList = "PL9833A9778A6BB457,PLCD0BBCF0821C9084,PL5dxFpVs9q2mZxqWNNLsNdQEEhO9ilR6J," +
+                                        "PLMzHS1Fh7fElUHzikx0v71_qOtgt-h1wJ,PLL30uj4mBoYP-8-CZ-9fqW7KmuU2M2vy0,PL30D1D396F4CDFBB0," +
+                                        "PL33748924FF32D510,PL7AD198111F85DB9C,PLE58787A354301DFE,PLHsv_F3G7XLXOQIZ60Bj7P2KkbFcZ5ph_," +
+                                        "PLdSBm5cs_QX-H_LAu_6SZ2L9rUD__k2zR,PL4BD003AD44BA8658,PL_m7vkBtlHcBtQt9bWEMCpA8RB2crrdtY," +
+                                        "PLEpfh9jiEpYSYIUMQjeCO1lUmpYZv3Qtc";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Sad melodies")) {
+                                formatedVidsList = "PLEEDF17AE177F527B,PL509690A35754E24F,PL448273752D6A392B,PL4BC9A2F7F2B75D83," +
+                                        "PL63EEC96AFCC324A4&index=4,PL901339D6BC9E5D73,PLACAFFF15158CE67E" +
+                                        "PL814FA5D5BEC48E7F,PL8E2CBE8655E5154F";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Soft melodies")) {
+                                formatedVidsList = "PLYkopulgW-Z2cFmcf4d15Tao6Rak8WZYb,PL-tiXFkBA6IyMEVAno7PxyQ3s2yeMykjo," +
+                                        "PLkClf2ueYJXhyyRSOAA0A3qjTMdcbgTNe,PL2540C704C182FA98,PL05CAD8640438D536," +
+                                        "PLiAttA3ZvGfk1vuF8Xq7j24sBsg4QuH17,PLeoPwI_un2DHGq6EZ2u6tWagq4FmXLpw9,PLpPW6R_JX0Uv34fU4ifzQjbC1TFSCZ3od";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Wedding special")) {
+                                formatedVidsList = "PLq7Fj9d8nmvNYtqRNdszwjloSUup_4NmG,PLaJZU9rQ6wK9KEUV1s0OUZqQ5q_9ueqo6," +
+                                        "PLLy1_srkKwEXnPNuLy7zgXwxMqz5RoX66,PLRH3rh7wq6OBfLpttBCc0WSQWlzj9KynI";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Choice of Punjabi")) {
+                                formatedVidsList = "PLvgBVbOFNRybywHIFTAKZaoKuiScRRDTT,PLRFkvWpQ2NJy1Z6khi24LCj4fKevPyG2M&index=7," +
+                                        "PLFFyMei_d85U5RQdXjRQ5F012qr4vSmSa,PL-zNzV4g9SYmlUoQZpnnHTi5XC88YYldC," +
+                                        "PLFFyMei_d85UsOmq3EfRfEcwILgugeuUU,PLYbDx92VRr8Y2HfwZFbMZxKBdjDI0A4OO," +
+                                        "PLAd87v8kxZ9JLo1DvgYcpOv4IBILRxzqU,PLEK4199_zBwAOSel6zxVBmP1eSH_Tg9kl";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Latest jukebox")) {
                                 formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
