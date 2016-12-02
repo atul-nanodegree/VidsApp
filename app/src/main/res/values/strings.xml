@@ -317,6 +317,7 @@
         <item>Soft melodies</item>
         <item>Wedding special</item>
         <item>Choice of Punjabi</item>
+        <item>Singers collection</item>
         <item>Latest jukebox</item>
         <item>Sune ansune gaane</item>
         <item>Remix jukebox</item>
@@ -325,7 +326,15 @@
         <item>Hits of the week</item>
         <item>Ghazals</item>
         <item>Sharaabi songs</item>
-        <item>Bollywood Movie</item>
+    </string-array>
+
+    <string-array name="movies_list">
+        <item>Romantic</item>
+        <item>Action</item>
+        <item>Comedy</item>
+        <item>Thriller / suspense</item>
+        <item>Horror</item>
+        <item>Hindi dubbed</item>
     </string-array>
 
     <string-array name="live_news_channels">

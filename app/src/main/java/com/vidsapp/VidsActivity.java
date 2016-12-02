@@ -71,6 +71,8 @@ public class VidsActivity extends AppCompatActivity {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.beauty_tips_list));
                             } else if (selectedCategory.equalsIgnoreCase("Bollywood songs")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.songs_list));
+                            } else if (selectedCategory.equalsIgnoreCase("Bollywood movies")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.movies_list));
                             } else if (selectedCategory.equalsIgnoreCase("News channels")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.live_news_channels));
                             }
@@ -175,6 +177,18 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLFFyMei_d85UsOmq3EfRfEcwILgugeuUU,PLYbDx92VRr8Y2HfwZFbMZxKBdjDI0A4OO," +
                                         "PLAd87v8kxZ9JLo1DvgYcpOv4IBILRxzqU,PLEK4199_zBwAOSel6zxVBmP1eSH_Tg9kl";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Singers collection")) {
+                                formatedVidsList = "PLcW36x0vC9XLd-z-Gu55FtTuQgxknRhd5,PLGMW_7AY_F42LG1ZtE5LnLT4bK42_sIDi," +
+                                        "PL_ojMrMyUd15UV2hNQdFzyuYzENI68y6Y,PLqkoKqLHcWCyuG3bxMkOmH1Z18yFzny5i," +
+                                        "PLwOScGCjb93DDU64Ai0E-GbnbH3aOh3R2," +
+                                        "PL9850DBE604B4D416,PLIoF1EmGOU3D8wjbiuTPSIPddPev1cj5h,PLRmdV1u90qKkT7l10w6c4OOxbbvNZxWdE," +
+                                        "PLP15S8bV9o5bPHmsXzVvcG-WMa_7HDkyH,PLHdrJ3cHREuY_IpdqzaGMrZ0er03dE8SU," +
+                                        "PL3492286914EC878C,PLhDMUiHBg1erHxiWeP8OkSeZ0i0CDxshQ,PL8E2DE298DB5DCCA8," +
+                                        "PL9AFFF4ABB022B7AE,PL98E962440015C6A1,PL0355E07646C0C291,PLcW36x0vC9XK5kIxUGCgcCRTB8kb3ZDZn," +
+                                        "PLA826A6E6DED51189,PLCF6C3CDD70DCB26A,PLCwTa6m59uGXwRF_6-3Udi5L2W-9DAm6I," +
+                                        "PLgh_EjxPZ7fqwFgMvixpGOq1ndnz3tgJs,PLARm22A77n4N9sMd_AeI9AOCOY3rCkWKP," +
+                                        "PLD6DB477019E5F012,PLShHEGqasFSzx81JoKnDUtfFUokISYA3F";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Latest jukebox")) {
                                 formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
@@ -193,12 +207,32 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
-
                             }
-                            else if (selectedSubCategory.equalsIgnoreCase("Bollywood Movie")) {
-                                formatedVidsList = "PLt2Bo1TXSU80Wqpz96zudjLp3xQNCEiEY,PLeo6eDZGP-ml04Y1IH-vrOq7KkB8yIBxn";
+                            else if (selectedSubCategory.equalsIgnoreCase("Romantic")) {
+                                formatedVidsList = "PLURHF8ZY2Y56kupEqz3TVLD__Zj-tlPSd,PLAE95D5B634195317,PLURHF8ZY2Y54V-lQ4zE5ToS4gyALjjTJx," +
+                                        "PLeo6eDZGP-ml04Y1IH-vrOq7KkB8yIBxn,PLFFyMei_d85UcDVoD2H98jCc9Mbem7hGZ";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
-
+                            } if (selectedSubCategory.equalsIgnoreCase("Action")) {
+                                formatedVidsList = "PLURHF8ZY2Y556Mnr_-LqpySgTVmVBvjaQ,PLd-JGjCltpgBhO1b3il2bmQeeaz-H8Ed5," +
+                                        "PL661Qfv7ujynpiEq6dWx50K6Cf9qr_vnp,PLntSKD8vRcxarqz_ouzsPIcLvOmAvVSEE,PL2D9E09B8E804DC1F";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } if (selectedSubCategory.equalsIgnoreCase("Thriller / suspense")) {
+                                formatedVidsList = "PLURHF8ZY2Y54gw4qX3uleIgUCUmjlG08g,PLG5YDXfHgllYslpZCJAyllnz4PwmdKxlv," +
+                                        "PLIbm8PMCgsLRgZlAWMd_AIxz4k5FP2fuZ,PLjXbLTS058MrrUNfJieKoyxCAUxNWjDgV," +
+                                        "PLF2sIvUHDxJ5f8iUkRz46pdZ_5OpFrpFx";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } if (selectedSubCategory.equalsIgnoreCase("Horror")) {
+                                formatedVidsList = "PLOFbEV8DRegRvGpbfRsnZJYPKLGNa-Q5S,PL4_uBMZhIS8I3OSl8mHQ7WMWOrutfIQCa," +
+                                        "PLv2b4SmNyK3snoB1oIvvmQYogs458Pkaq,PLnOjHXskqOEaz-Vr3di8Kk31O1oYEw75p";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } if (selectedSubCategory.equalsIgnoreCase("Comedy")) {
+                                formatedVidsList = "PL0iajqfMHtYmTO2VunNO1fy5ErPtzkhii,PLURHF8ZY2Y55xZTpilq5fPTMlWMorkGBP," +
+                                        "PL0FE8gBGxbQmTmgYcACJDNF_7mq4as9vZ,PL24DPWlf6HgmXN0I6eKSEXhiZu5pMLKTC," +
+                                        "PL0CaUqi81mPmybMiWGxqh8mkfMbgpPaOc,PL4ABBC887A886A9AC,PLvdrEOxqEIXx3zjbNLdPh5L_trN53PelA," +
+                                        "PL0yy74BDBbR2JXE1lvx0ESxl2RwnBYxmE,PLX5lVjC5eKN0-X16IqsjoJAv6sJ_Z_3CF," +
+                                        "PL0CaUqi81mPmJx-X-2p17hf-7eaG-Cd-H,PLv1E6xGMdApdcVRdsrjQqs6nkGUiHpOqL," +
+                                        "PLzRTv50jotmkaWb5agvR2y6RF8jnHDvsg,PLQXb3Gb48Rmh2VC1wQqNgQVTyrZcOtxDh";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Ghazals")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.ghazals_vids));
