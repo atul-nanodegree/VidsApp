@@ -374,23 +374,25 @@ public class ApiYoutube {
 
                 for (PlaylistItem result : results) {
                     YoutubeVideoListItemEntity item = new YoutubeVideoListItemEntity();
-                    item.setTitle(result.getSnippet().getTitle());
-                    item.setDescription(result.getSnippet().getDescription());
-                    if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null && result.getSnippet().getThumbnails().getHigh().getUrl()!=null){
-                        item.setThumbnailURL(result.getSnippet().getThumbnails().getHigh().getUrl());
+                    if (!result.getSnippet().getTitle().startsWith("Deleted")) {
+                        item.setTitle(result.getSnippet().getTitle());
+                        item.setDescription(result.getSnippet().getDescription());
+                        if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getHigh()!=null && result.getSnippet().getThumbnails().getHigh().getUrl()!=null){
+                            item.setThumbnailURL(result.getSnippet().getThumbnails().getHigh().getUrl());
 
+                        }
+                        else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
+                            item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
+                            item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());
+                            item.setVideoThumH(result.getSnippet().getThumbnails().getMedium().getHeight());
+
+                        }
+                        item.setId(result.getSnippet().getResourceId().getVideoId());
+                        //item.setNextPageToken(result.);
+
+                        //item.setTotalVideos(result.);
+                        items.add(item);
                     }
-                    else if(result.getSnippet().getThumbnails()!=null && result.getSnippet().getThumbnails().getMedium()!=null && result.getSnippet().getThumbnails().getMedium().getUrl()!=null){
-                        item.setThumbnailURL(result.getSnippet().getThumbnails().getMedium().getUrl());
-                        item.setVideoThumW(result.getSnippet().getThumbnails().getMedium().getWidth());
-                        item.setVideoThumH(result.getSnippet().getThumbnails().getMedium().getHeight());
-
-                    }
-                    item.setId(result.getSnippet().getResourceId().getVideoId());
-                    //item.setNextPageToken(result.);
-
-                    //item.setTotalVideos(result.);
-                    items.add(item);
                 }
 
                 videoListItems.setItems(items);
