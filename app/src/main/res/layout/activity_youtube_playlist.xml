@@ -6,6 +6,12 @@
     android:background="@color/forgot_password_bg"
     tools:context="com.vidsapp.YoutubePlaylistActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary" />
+
     <TextView
         android:id="@+id/video_count"
         android:layout_width="220dp"
