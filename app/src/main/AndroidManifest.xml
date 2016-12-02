@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".VidsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
@@ -29,6 +30,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name="com.vidsapp.YoutubePlaylistActivity"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize"
             android:parentActivityName="com.vidsapp.VidsActivity">
             <meta-data
