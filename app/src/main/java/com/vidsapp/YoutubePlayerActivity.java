@@ -1,5 +1,6 @@
 package com.vidsapp;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -25,7 +26,10 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity implements YouTub
         mPlayerView.initialize(ApplicationConstants.YOUTUBE_DEVELOPER_BROWSER_KEY, this);
 
     }
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider,
                                         YouTubeInitializationResult result) {
