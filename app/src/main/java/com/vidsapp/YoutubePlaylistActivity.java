@@ -136,5 +136,13 @@ public class YoutubePlaylistActivity extends  BaseActivity {
 
         }
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
+            return true;
 
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
 }
