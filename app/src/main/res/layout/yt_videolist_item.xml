@@ -95,6 +95,24 @@
                 android:contentDescription="empty"
                 android:background="@drawable/ic_play_big"
                 android:padding="@dimen/margin_20dp" />
+
+            <ImageView
+                android:id="@+id/fav_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/fav_yes"/>
+
+            <ImageView
+                android:id="@+id/fav_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/fav_no" />
         </FrameLayout>
 
 
