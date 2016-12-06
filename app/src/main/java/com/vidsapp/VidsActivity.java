@@ -1,5 +1,6 @@
 package com.vidsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -31,15 +32,6 @@ public class VidsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 //        toolbar.setLogo(R.drawable.icon);
         mMainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         initializeVidsCategory();
         mVideoFragment = new VideosListFragment();
@@ -294,7 +286,15 @@ public class VidsActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_favorite) {
+            Intent i = new Intent(VidsActivity.this, VidsFavoriteActivity.class);
+            String favVidsIds = VidsApplUtil.readDataFromFile(this, VidsApplUtil.FAV_FILE_NAME);
+            String formatedIds = "";
+            if (favVidsIds != null && favVidsIds.startsWith(",")) {
+                formatedIds = favVidsIds.substring(1, favVidsIds.length());
+            }
+            i.putExtra(VidsApplUtil.TYPE_VIDEO, formatedIds);
+            startActivity(i);
             return true;
         }
 

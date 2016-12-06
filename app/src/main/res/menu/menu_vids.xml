@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.vidsapp.VidsActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_favorite"
         android:orderInCategory="100"
         android:title="@string/action_favorite"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_settings2"
+        android:id="@+id/action_watchlist"
         android:orderInCategory="100"
         android:title="@string/action_watchlist"
         app:showAsAction="never" />

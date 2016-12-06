@@ -47,6 +47,17 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c571a009232e5f2b1bd8c00fc7863ee455548434" />
+
+        <activity
+            android:name="com.vidsapp.VidsFavoriteActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName="com.vidsapp.VidsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vidsapp.VidsActivity" />
+        </activity>
     </application>
 
 </manifest>
