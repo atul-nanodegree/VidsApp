@@ -255,16 +255,45 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = "PLQlI5m713h7v42G_1FIWN5rQGatYA-O4G,PLQlI5m713h7uihKlOYmowOUZ2hlg4c7gw," +
                                         "PLQlI5m713h7t_2jt--yqIA5wFav6VX0dY,PLQlI5m713h7unbL24Qq4KZrV1E3E9WLzb,PLB4C07FAAE6FA5428," +
                                         "PL4267B4165D10C828,PLQlI5m713h7tkaNw-3zJIz-jo1Vfs9bFZ,PLQlI5m713h7spQLH0gfDxKJPHeoSNZTgv," +
-                                        "PLQlI5m713h7vuTgnYz7AzZsv6taL_Fby5,PLQlI5m713h7vxfMnikMOzCA8RG5gcXdl2,PLQlI5m713h7tSb1Gxh7eRDDGLasGKzIO2";
+                                        "PLQlI5m713h7vuTgnYz7AzZsv6taL_Fby5,PLQlI5m713h7vxfMnikMOzCA8RG5gcXdl2," +
+                                        "PLQlI5m713h7tSb1Gxh7eRDDGLasGKzIO2,PLAFFE3D587F96E152,PLQlI5m713h7tZ0vjlSHkXwVKlEoxVI_Rh," +
+                                        "PLF100B1D028BC0CC6,PLjxv5PjVc17Amno81j0DrntRvN-36TCfU,PLQlI5m713h7u1lTAMT07P38zO1ObJj6Jn," +
+                                        "PLRcarg7b0_VkLGC9R0QucmtozBY8Z_09t,PLKXMBEaAiocUjidbYMGqAH0xule2h__Vu,PL0E62D9550D7860A2," +
+                                        "PL2A2B90A383DD1BC3,PLyb4WJKDdS7geTyUOCTCKd0hcIymsPSw-,PLXtOj-oKyAlaOTnW374KxO1RHBW94OQ3S," +
+                                        "PLfzzrAmALcU561WCzXePXixVP2KZybN2N,PL8DCCA92008AD0BBC,PLVDBP1b0X_lflsRdWyqvvcrX3fswHs_Ll," +
+                                        "PLQlI5m713h7sT0VkGEH9Kjc6PnQxnzNKl,PLWmhiFviaXYi4LsS6NKpetIbFdlvZggNR," +
+                                        "PLVK7OUj1rCtOTkC_qxC8gWmEmCJU-pnyJ";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
 
                             else if (selectedSubCategory.equalsIgnoreCase("Nisha Madhulika")) {
-                                formatedVidsList = "PLHKsrffpkToERfAjXU9uqLk3zvRQSp_wh,PLHKsrffpkToE2qwQp8iaZfynoZ5PFSk5L," +
+                                formatedVidsList = "PLodB7SudGtZrkkBnSEYO_F-r51aIdb88E," +
+                                        "PLodB7SudGtZrFhdcEfZf5cpBZ5CFzjlzn,PLHKsrffpkToERfAjXU9uqLk3zvRQSp_wh," +
+                                        "PLHKsrffpkToE2qwQp8iaZfynoZ5PFSk5L,PLodB7SudGtZoRtq25D2FciPeQqY3vI1Xe," +
+                                        "PLHKsrffpkToFG9DD0XY1n-wrAUrKaOYOr,PLFP3fWTk1lmoFLCjFLha2oT8oBR2Q5pwm," +
+                                        "PLHKsrffpkToFTpjtfqvkoU_kwbJdBoNsR,PLiX-65dsgFOR7SzTlIHs2reHyNfPjG_-9," +
+                                        "PLHKsrffpkToEHVKyeBZnibdKBft0CI6O7,PLFgI0Ia8_4kmUQ3CDg0eD9ajVF-Jlwcdi," +
+                                        "PLHKsrffpkToGzSbxv97ZcOPUg96g1hRRJ,PLAD87A1390DC6EF7E,PL63F962E25F65088C," +
+                                        "PLXtOj-oKyAlbUuCiLbQ2cW0gQUCp7kKCH,PLa5XztyR6BvhakojGU3bsoNmrsCyi58S4," +
+                                        "PLHKsrffpkToFhiCl340gbXL1ZL0LWVdxO,PLCVz3z4ki8dwnUcq-RIK1Dv0fBk5tPxlj," +
+                                        "PLHKsrffpkToHF7RXvBOhOmx5X2Xq3NMrO,PLHKsrffpkToF4cmMZESewIYXWHhq9KCLF," +
                                         "PLHKsrffpkToHwEaxZ9Uuj180E7U844IPv,PLHKsrffpkToGvaFgcTPhFem9oHL4iYsoO,PL93E44A69F0425AD5," +
                                         "PLHKsrffpkToGPsJB5XBttx-rUXuSEDgfM,PL2E13244613DE182C,PLHKsrffpkToF5OTVNvbq6bqVUf3Limj9w," +
                                         "PLHKsrffpkToFSdirHAn_N9Lsc1w_FASIe,PLHKsrffpkToGDOTNdcQ4gxy7kkOB7Xn2y," +
-                                        "PLHKsrffpkToFGVWEqfgMSBG2EioEJ-5jY,PLHKsrffpkToHu4iPt8Q-0BTT8At7oy0Vu,PLHKsrffpkToEEce3BAjl_1CJrZuO3zoi0";
+                                        "PLHKsrffpkToFGVWEqfgMSBG2EioEJ-5jY,PLHKsrffpkToHu4iPt8Q-0BTT8At7oy0Vu," +
+                                        "PLHKsrffpkToEEce3BAjl_1CJrZuO3zoi0,PLHKsrffpkToFzgv73hoJX4_zfthilPp8o," +
+                                        "PLHKsrffpkToGa5nwIo9_PkmpuroLRIrWD,PLHKsrffpkToFNULXimjYMblb3ftY8Qsr2," +
+                                        "PLrFg_WvCkeGVwPEkarczjg1dXSXrO4zJg,PLHKsrffpkToG75nrwM84uXsQ1ZKgM_oaC," +
+                                        "PLHKsrffpkToGVHHH-qrQSAPeyfCyNu2jJ,PLHKsrffpkToH4S-kaHGh9ZXxMPPuL0H90," +
+                                        "PLHKsrffpkToG4Nww72W9LgEZFWUmU1z8X,PLHKsrffpkToH0vib0gnxEQBI9dMdiVrO2," +
+                                        "PLHKsrffpkToFiRphzIz8jFyMuXBeFJKH6,PLHKsrffpkToHzR0f6j8k5fEB8QYcFyKfA," +
+                                        "PLHKsrffpkToErB14NWx9ZQvLvWV4somEU,PLHKsrffpkToHlLNSHsmV6H5TtvvK5xFNA," +
+                                        "PLHKsrffpkToHgnCaV0VTK3W6Or453kuFH,PLHKsrffpkToFGVWEqfgMSBG2EioEJ-5jY," +
+                                        "PLHKsrffpkToFp3fDZfS8cNmBcql_J-ner,PLHKsrffpkToEJXUX7X042GxZi6a0fBT9w," +
+                                        "PLHKsrffpkToFORIQ1heaTFYMh7uWG9OmM,PLHKsrffpkToE0QH8iqYiGBBxgqwRcEH2e," +
+                                        "PLHKsrffpkToHLR2QIzyQTq9jo19h4mqNr,PLHKsrffpkToGOMnItpd3WDtISxzcIfRcB," +
+                                        "PLHKsrffpkToE4eL1k_APt84SUD-cmBhhB,PLHKsrffpkToFfv_HoCw0I1SLEM6SjEB6b," +
+                                        "PLHKsrffpkToE64DrZZO4hC0fBcy4vDbQ4,PLHKsrffpkToGHFv_sjkQWvGNBqLBjkggT";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Kabita Kitchen")) {
@@ -278,8 +307,12 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLKorCs_pzTojpmlLqrby4javSg8xCTjuY,PLKorCs_pzTojXvd_0LhGApJMSUJwRjKK2,PLKorCs_pzTohIH3eV70dV1g21T3TWWEgQ," +
                                         "PLKorCs_pzTogbQfMGRDNr_Km7I2H6tdqy,PLKorCs_pzTojMRS37n5oh9dlv6Obb5eBb";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
-                            }
-                            else if (selectedSubCategory.equalsIgnoreCase("Rajshri Food")) {
+                            } else if (selectedSubCategory.equalsIgnoreCase("Tarla Dalal")) {
+                                formatedVidsList = "PLjMg8wIdiWavDO2JCk7iSEdxkwRJcUiPF,PLE63A4B659365002B," +
+                                        "PLjMg8wIdiWatUUedWR0j6xkE2qW0Adgsg,PLEAF0B48D2FF9CE50,PLjMg8wIdiWasxToaXOIlQyjzUfTsgULl1," +
+                                        "PLjMg8wIdiWavnRT_WWOFkD43-qgXAjo1T,PLjMg8wIdiWauSGMdaok8FRUkRBIpMH4Jv";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }  else if (selectedSubCategory.equalsIgnoreCase("Rajshri Food")) {
                                 formatedVidsList = "\n" +
                                         "PLhQ0_mMdHj7_g7pIB1J6SOfcNzY0wQ8JT,PLhQ0_mMdHj7_sjHI0cuuF-vJdaXxaGSwf,PLhQ0_mMdHj7_nqT6m-Yk-LvfgzHjvbW8i," +
                                         "PLhQ0_mMdHj7-R9xN9q4BVo7nbr6o-tFPj,PLhQ0_mMdHj793PXy_9kmuwi4oJU7-YeIF," +
