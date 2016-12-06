@@ -76,6 +76,9 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedCategory.equalsIgnoreCase("News channels")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.live_news_channels));
                             }
+                            else if (selectedCategory.equalsIgnoreCase("Food recipes")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.food_recepies));
+                            }
                         }
                     }
                     public void onNothingSelected(AdapterView<?> parent) {
@@ -245,6 +248,72 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.news_vids));
                                 videoType = VidsApplUtil.TYPE_VIDEO;
+                            }
+
+                            else if (selectedSubCategory.equalsIgnoreCase("FoodFood")) {
+                                formatedVidsList = "PLI-l1OOUnVtOcrO0MP0Qn67bvaGYS5-QS,PLI-l1OOUnVtMhpmj1HzNXg1qd0ByTrihB," +
+                                        "PLI-l1OOUnVtM5p90oI4Rw7D09znrQRoZN," + "PLI-l1OOUnVtNOY4uWnfa2nHIAbC8elqId,PLI-l1OOUnVtP0Gf2y4Ugc-EycGxO0rOZx," +
+                                        "PLI-l1OOUnVtNhMBIQlX839aTOMH4mV6Gs," +
+                                        "PLI-l1OOUnVtMTN8AA9RIJYxXuh1WFfwtu,PLI-l1OOUnVtPQstzp1gNQYEjZzZxliYW6," +
+                                        "PLI-l1OOUnVtNDOcpleIxf9tzvoA5kMhny,PLI-l1OOUnVtP-0jnNXlwnVAPNC9ozhBzE";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+
+                            else if (selectedSubCategory.equalsIgnoreCase("Sanjeev Kapoor Khazana")) {
+                                formatedVidsList = "PLQlI5m713h7v42G_1FIWN5rQGatYA-O4G,PLQlI5m713h7uihKlOYmowOUZ2hlg4c7gw," +
+                                        "PLQlI5m713h7t_2jt--yqIA5wFav6VX0dY,PLQlI5m713h7unbL24Qq4KZrV1E3E9WLzb,PLB4C07FAAE6FA5428," +
+                                        "PL4267B4165D10C828,PLQlI5m713h7tkaNw-3zJIz-jo1Vfs9bFZ,PLQlI5m713h7spQLH0gfDxKJPHeoSNZTgv," +
+                                        "PLQlI5m713h7vuTgnYz7AzZsv6taL_Fby5,PLQlI5m713h7vxfMnikMOzCA8RG5gcXdl2,PLQlI5m713h7tSb1Gxh7eRDDGLasGKzIO2";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+
+                            else if (selectedSubCategory.equalsIgnoreCase("Nisha Madhulika")) {
+                                formatedVidsList = "PLHKsrffpkToERfAjXU9uqLk3zvRQSp_wh,PLHKsrffpkToE2qwQp8iaZfynoZ5PFSk5L," +
+                                        "PLHKsrffpkToHwEaxZ9Uuj180E7U844IPv,PLHKsrffpkToGvaFgcTPhFem9oHL4iYsoO,PL93E44A69F0425AD5," +
+                                        "PLHKsrffpkToGPsJB5XBttx-rUXuSEDgfM,PL2E13244613DE182C,PLHKsrffpkToF5OTVNvbq6bqVUf3Limj9w," +
+                                        "PLHKsrffpkToFSdirHAn_N9Lsc1w_FASIe,PLHKsrffpkToGDOTNdcQ4gxy7kkOB7Xn2y," +
+                                        "PLHKsrffpkToFGVWEqfgMSBG2EioEJ-5jY,PLHKsrffpkToHu4iPt8Q-0BTT8At7oy0Vu,PLHKsrffpkToEEce3BAjl_1CJrZuO3zoi0";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Kabita Kitchen")) {
+                                formatedVidsList = "\n" +
+                                        "PLKorCs_pzToiYxdYOq0A59K-NwqRwfAWj,PLKorCs_pzTogEIKigT7hsMYU6FdgCjplb,PLKorCs_pzToiNFfviaPDQ5ZQG_SZdQ55H," +
+                                        "PLKorCs_pzTog0F8XzwmX4nOPvPsD3dr_y," +
+                                        "PLKorCs_pzTogNw_TRpiexO6XLgNsNUKgs,PLKorCs_pzToggrCCIyJWQCG9m9P4B0WMC,PLKorCs_pzTohjMFu99KKC1ROUmnc_QF12," +
+                                        "PLKorCs_pzTogUibudBDhVEMQumB-RVwE_,PLKorCs_pzTojzS9CP7AoKOGPoupqB_Q73,PLKorCs_pzTojhoh4x8-lBH9o3Y3juPdkQ," +
+                                        "PLKorCs_pzToj74rfZRcDwgQXWnBAubrkE,PLKorCs_pzTojhGmrvou9_ybmUMwyhwNz4,PLKorCs_pzTojLCYtE2fOfHDE1saETKqgN," +
+                                        "PLKorCs_pzTohvySkcASDa_1CNhU2o3aSE,PLKorCs_pzToivlM3S7tcYvMDrL7c90n-t,PLKorCs_pzTogyTFVntOfupXtQJdR5aRiE," +
+                                        "PLKorCs_pzTojpmlLqrby4javSg8xCTjuY,PLKorCs_pzTojXvd_0LhGApJMSUJwRjKK2,PLKorCs_pzTohIH3eV70dV1g21T3TWWEgQ," +
+                                        "PLKorCs_pzTogbQfMGRDNr_Km7I2H6tdqy,PLKorCs_pzTojMRS37n5oh9dlv6Obb5eBb";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Rajshri Food")) {
+                                formatedVidsList = "\n" +
+                                        "PLhQ0_mMdHj7_g7pIB1J6SOfcNzY0wQ8JT,PLhQ0_mMdHj7_sjHI0cuuF-vJdaXxaGSwf,PLhQ0_mMdHj7_nqT6m-Yk-LvfgzHjvbW8i," +
+                                        "PLhQ0_mMdHj7-R9xN9q4BVo7nbr6o-tFPj,PLhQ0_mMdHj793PXy_9kmuwi4oJU7-YeIF," +
+                                        "PLhQ0_mMdHj7--9HXaJRuinVxNbP4M-lvv,PLhQ0_mMdHj7_uXuLb0rZTm8jyldYgA8Hz," +
+                                        "LLdegm7Y2AePJhkkmWCyYEwg,PLhQ0_mMdHj7-qjKAGjGSq9c6dsebwGrd4,PLhQ0_mMdHj78vgaQqjqQm56dw5-z8_5Ld," +
+                                        "PLhQ0_mMdHj7_wYuccgJfvh-YVtuk-HY00,PLhQ0_mMdHj7-ue-sPbDi9wIN_-EmowQfE";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Vikas Khanna")) {
+                                formatedVidsList = "\n" +
+                                        "PLqHo0TDtnNkQMJ2Iq6rvLz33MMbmQTxW8,PLqHo0TDtnNkSJxwTRqOKtEobR4ywa5MP5,PLqHo0TDtnNkT93memHq5a66xtfP35HXbr," +
+                                        "PLqHo0TDtnNkQsAJf6eF3nM4YAmXNA8Hth,PLqHo0TDtnNkSLN1j8mOy2nLV3-99z8M0r,PLqHo0TDtnNkTV13MjsZPK8JlMjgd8_Fj3";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Pankaj Bhadouria")) {
+                                formatedVidsList = "\n" +
+                                        "LLA34Z3lq8FozSQzDHsSLcmQ,PLbF9OWJ9PNmbx3Mzqd7re6hdaEWonx3wI";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Vahchef")) {
+                                formatedVidsList = "\n" +
+                                        "PLecDmWZ6vbWS0bMyK6qzNfhki3cnfp2Wk,PLecDmWZ6vbWSQpU2uwB-nmJ5EHVfusJ5s," +
+                                        "PLecDmWZ6vbWTjFPqyBd8w1APtlqLNofXh,PLecDmWZ6vbWQALPIfG-Ek9_J68OJY6KyD,PLecDmWZ6vbWSjlSWjt-QeT8e_o_vSTXxx," +
+                                        "PLecDmWZ6vbWQhWwMu1sdFqptVama7sO5R,PLecDmWZ6vbWQghczJIOhwG27vC6TZKN8A," +
+                                        "PLecDmWZ6vbWRyKbgCX3KybX1-cs-LxdvY,PLecDmWZ6vbWRGbF6e6giqFPC1teswBZbT,PLecDmWZ6vbWRfP52lP4B1QjHad9xbdBJ7";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             if(VidsApplUtil.TYPE_VIDEO.equals(videoType)){
                                 getSupportFragmentManager().beginTransaction()

@@ -346,8 +346,21 @@
         <item>Live News</item>
     </string-array>
 
+    <string-array name="food_recepies">
+        <item>FoodFood</item>
+        <item>Sanjeev Kapoor Khazana</item>
+        <item>Nisha Madhulika</item>
+        <item>Kabita Kitchen</item>
+        <item>Rajshri Food</item>
+        <item>Vikas Khanna</item>
+        <item>Pankaj Bhadouria</item>
+        <item>Vahchef</item>
+
+    </string-array>
+
     <string-array name="news_vids">
-        <item>E9QXO5m_iS0</item>
+       <!-- <item>E9QXO5m_iS0</item>-->
+        <item>oMETNh3Tr0Q</item>
         <item>yCWbiLZqTyM</item>
         <item>nAFBhWQPMU8</item>
         <item>vdBesFFdgDs</item>
