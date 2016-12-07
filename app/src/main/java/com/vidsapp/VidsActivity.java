@@ -112,6 +112,10 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.cholesterol_vids));
                                 videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Heart diseases")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.heart_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Sandeep Maheshwari")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_sandeep_m_vids));
@@ -290,10 +294,7 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLHKsrffpkToErB14NWx9ZQvLvWV4somEU,PLHKsrffpkToHlLNSHsmV6H5TtvvK5xFNA," +
                                         "PLHKsrffpkToHgnCaV0VTK3W6Or453kuFH,PLHKsrffpkToFGVWEqfgMSBG2EioEJ-5jY," +
                                         "PLHKsrffpkToFp3fDZfS8cNmBcql_J-ner,PLHKsrffpkToEJXUX7X042GxZi6a0fBT9w," +
-                                        "PLHKsrffpkToFORIQ1heaTFYMh7uWG9OmM,PLHKsrffpkToE0QH8iqYiGBBxgqwRcEH2e," +
-                                        "PLHKsrffpkToHLR2QIzyQTq9jo19h4mqNr,PLHKsrffpkToGOMnItpd3WDtISxzcIfRcB," +
-                                        "PLHKsrffpkToE4eL1k_APt84SUD-cmBhhB,PLHKsrffpkToFfv_HoCw0I1SLEM6SjEB6b," +
-                                        "PLHKsrffpkToE64DrZZO4hC0fBcy4vDbQ4,PLHKsrffpkToGHFv_sjkQWvGNBqLBjkggT";
+                                        "PLHKsrffpkToFORIQ1heaTFYMh7uWG9OmM,PLHKsrffpkToHLR2QIzyQTq9jo19h4mqNr";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Kabita Kitchen")) {
