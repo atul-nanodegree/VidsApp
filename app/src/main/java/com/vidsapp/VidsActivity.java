@@ -20,7 +20,7 @@ public class VidsActivity extends AppCompatActivity {
 
     private Spinner categorySpinner, subCategorySpinner;
     private  CoordinatorLayout mMainCoordinatorLayout;
-    private Fragment mVideoFragment;
+    private VideosListFragment mVideoFragment;
     private Fragment mPlayListFragment;
 
 
@@ -369,6 +369,10 @@ public class VidsActivity extends AppCompatActivity {
         if(!NetworkUtil.isConnected(this)) {
             Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
+        }
+        YoutubeNewTOldVideosListAdapter adapter = mVideoFragment.getAdapter();
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
         }
 
     }

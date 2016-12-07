@@ -133,4 +133,8 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
         }
     }
 
+    public YoutubeNewTOldVideosListAdapter getAdapter() {
+        return mDoclevelListAdapter;
+    }
+
 }
