@@ -71,6 +71,9 @@ public class VidsActivity extends AppCompatActivity {
                             else if (selectedCategory.equalsIgnoreCase("Food recipes")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.food_recepies));
                             }
+                            else if (selectedCategory.equalsIgnoreCase("Kids")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.kids_section));
+                            }
                         }
                     }
                     public void onNothingSelected(AdapterView<?> parent) {
@@ -339,6 +342,69 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLecDmWZ6vbWTjFPqyBd8w1APtlqLNofXh,PLecDmWZ6vbWQALPIfG-Ek9_J68OJY6KyD,PLecDmWZ6vbWSjlSWjt-QeT8e_o_vSTXxx," +
                                         "PLecDmWZ6vbWQhWwMu1sdFqptVama7sO5R,PLecDmWZ6vbWQghczJIOhwG27vC6TZKN8A," +
                                         "PLecDmWZ6vbWRyKbgCX3KybX1-cs-LxdvY,PLecDmWZ6vbWRGbF6e6giqFPC1teswBZbT,PLecDmWZ6vbWRfP52lP4B1QjHad9xbdBJ7";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("ChuChu TV")) {
+                                formatedVidsList = "PLV-cxl3VSwWHa83pPHIealm1vg0Cdp3aZ,PLV-cxl3VSwWEZPb6yEvQaf68_yY8chu8U,PLV-cxl3VSwWFB3u4D6Vq5LsmiP3H-wGOS," +
+                                        "PLV-cxl3VSwWHZz0NarV7B7fhYUkT0rAGX,PLV-cxl3VSwWFcpAjZsnDFgezlLOIzSCYo,PLV-cxl3VSwWHBvsggTtJOvg81wKFICLX_," +
+                                        "PLV-cxl3VSwWHy3JvK-E9e944E_ci8j_g4,PLV-cxl3VSwWEiktlr-EJ9PhyvEkNL1gPD,PLV-cxl3VSwWHjyMYLoxmHWkzFenDzxZsV," +
+                                        "PLV-cxl3VSwWFsBZwigZ71s0gxInr5Z1jT,PLV-cxl3VSwWG_opeAaq442N-6HrMyRyUC";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Animation Movies")) {
+                                formatedVidsList = "PLVeGq8yvmEoZMwMu0ySPU5Lt3ltRRrNYd,PLkLWhpNfRRnFfUMTMxedLG-jCtbGQoGRE," +
+                                        "PLra5p7VeoCdVIJHlaYTEs7h0gmvD-bifC";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Tom and Jerry")) {
+                                formatedVidsList = "\n" +
+                                        "PLOLEQVkmI9eugSKUsrQBH0rxMN-qBLUyV";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Doraemon")) {
+                                formatedVidsList = "\n" +
+                                        "PL7AowHd5QvCq2dOzdHchSO7d4dR3oiOJP";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Chhota Bheem")) {
+                                formatedVidsList = "\n" +
+                                        "PL3A3Us6jIaWQkU6NAnAuGPyXJFZkIoqRs";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Very Funny Cartoons")) {
+                                formatedVidsList = "PL1TtObLAkXskULDTZPY3C6E4RTAGs_AQv,PLC8DECF60FEEC2780";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Motu Patlu")) {
+                                formatedVidsList = "PLkffMCxtJZZRkHFE_Wp4GQiIPqgud3EZu";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Oggy And The Cockroaches")) {
+                                formatedVidsList = "PLkffMCxtJZZRKcKvMMhGZWp4ZwntQKSPt";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+
+                            else if (selectedSubCategory.equalsIgnoreCase("Baby TV")) {
+                                formatedVidsList = "PLakLrQJOovvm3w7JXI2hImYvfJKjGNiOa,PLakLrQJOovvm1p46BcwlpE23V5uym9fWr," +
+                                        "PLakLrQJOovvmeMTnQsiugVGY4LI4VUoEB,PLakLrQJOovvlSC-gfT2UvCFU9qxLOXiN-," +
+                                        "PLakLrQJOovvlpJzAuQuWN8yOszoycRTzz,PLakLrQJOovvl5VLQvckznxKOIWr5bJ-m5," +
+                                        "PLakLrQJOovvmJocamFAquztsY3JLZbWWI,PLakLrQJOovvneB91lg4XW4L09T4fVTpVV";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Bob The Builder English")) {
+                                formatedVidsList = "PLiluoe0QNL4EXc5qYPJWoqZ2iyBPk3ybk";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Bob The Builder Hindi")) {
+                                formatedVidsList = "PLliauKz65-NiPx0PlS4PfdTVZM_fHQelx";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("NODDY in Hindi")) {
+                                formatedVidsList = "PL4per263uEmD7aXLvUP8YpApycdAmVvP9";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("NODDY in English")) {
+                                formatedVidsList = "PLiluoe0QNL4EXc5qYPJWoqZ2iyBPk3ybk";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             if(VidsApplUtil.TYPE_VIDEO.equals(videoType)){

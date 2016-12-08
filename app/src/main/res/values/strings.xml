@@ -393,6 +393,26 @@
 
     </string-array>
 
+    <string-array name="kids_section">
+        <item>ChuChu TV</item>
+        <item>Animation Movies</item>
+        <item>Tom and Jerry</item>
+        <item>Doraemon</item>
+        <item>Chhota Bheem</item>
+        <item>Very Funny Cartoons</item>
+        <item>Motu Patlu</item>
+        <item>Oggy And The Cockroaches</item>
+        <item>Baby TV</item>
+        <item>Bob The Builder Hindi</item>
+        <item>Bob The Builder English</item>
+        <item>NODDY in Hindi</item>
+        <item>NODDY in English</item>
+
+
+
+
+    </string-array>
+
     <string-array name="news_vids">
         <item>oMETNh3Tr0Q</item>
         <item>yCWbiLZqTyM</item>
