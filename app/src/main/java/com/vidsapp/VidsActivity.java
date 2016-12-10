@@ -63,7 +63,13 @@ public class VidsActivity extends AppCompatActivity {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.beauty_tips_list));
                             } else if (selectedCategory.equalsIgnoreCase("Bollywood songs")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.songs_list));
-                            } else if (selectedCategory.equalsIgnoreCase("Bollywood movies")) {
+                            }
+                            else if (selectedCategory.equalsIgnoreCase("Tamil special")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.tamil_list));
+                            }
+                            else if (selectedCategory.equalsIgnoreCase("Telugu special")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.telugu_list));
+                            }else if (selectedCategory.equalsIgnoreCase("Bollywood movies")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.movies_list));
                             } else if (selectedCategory.equalsIgnoreCase("News channels")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.live_news_channels));
@@ -209,6 +215,58 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Hits of the week")) {
                                 formatedVidsList = "UCzBeabhpibZNOecCvw3nUKA";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Hindi Hot Item Songs")) {
+                                formatedVidsList = "PLHEnjnT8-WbLm_kxHT4Pbm5XGFCkUvnL_,PLAerbFI-NKthxQsIN8SnpCezDg57sB1X0,PL0Wy1yLrrfpb0-fUbzbFX8NT1tvwG_Jd_," +
+                                        "PLAerbFI-NKthU8pkpUnrgGZykeJJVy-Fc,PLg94EwI1kNbkUcCdSLFsa9l2P5wXShxK3";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("A. R. Rahman Hit Tamil Songs")) {
+                                formatedVidsList = "PLo-rZP7UP-Fmhaxktws5YXUoVPXImE6rK,PL4QNnZJr8sROExTFqbu-4OJIWS4XHZbng";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Ilayaraja Hit Tamil Songs")) {
+                                formatedVidsList = "PL8yOO2xYRcZtV9MerodXVdl2YIx60F87Y,PLNAG_jXQnh0J6WMVQTikNQ4ll53w0SPka";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("RajniKant Special")) {
+                                formatedVidsList = "PLjity7Lwv-zpveZTZw7bcYKOwR1btkgl2,PLl97Be7_Hy_OQkeWTqdlt_7QbT4KlrK_u,PLjity7Lwv-zoZvasd7XbXzGWNcdwJnf6c";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Kamal Hasan Special")) {
+                                formatedVidsList = "PL38A1F533861A4528,PLGgcJv7ZxqrU5iHgpORIYVoAjrqC3pBqk";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Tamil Movies")) {
+                                formatedVidsList = "PLFAwfSsckJkQkhYY_4CNsHvKk2gSb9zKB,PLthizvY3wuX8KHZaynRSG61pbNY4JO_0m," +
+                                        "PLpsfNoniec7yl7AGshjrr_lUXsMAxZE0C,PLV6iX0NmV9IhSupxYo_mYdBYGbiJAkvYM,PLx8w5arTJ_r-G28ItZVbUJcj05iRIGkPG,";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+
+                            else if (selectedSubCategory.equalsIgnoreCase("Tamil Hot Item Songs")) {
+                                formatedVidsList = "PLjity7Lwv-zo-9PYexEaeJWFRkeZhKiJd,PL_eVpGrJ2tRZwFtsTuPMoVkBmJZTHnHZC";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("S. P. Balasubrahmanyam Songs")) {
+                                formatedVidsList = "PLnKSZ48XMs3vafEfcBWHAH4HihSxlagtA,PLpZ-VVUqFU70GvGczMGNonpPQbfEXfPQ5,PLDA50F45B27E2BA2B,PL6A2EC60A87F71FCD";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Telugu Songs")) {
+                                formatedVidsList = "PLamAR1afoIYHbwn9h4jJziV_EOa86yhmV,PLWG3kwozwBkdlonVOSMInAO-D9cwQB1jL,PLhJ7IoDMF96meL-muoQ1bBUTogM2e6Owu,PL9D80C36288186633,PL1F8DE5C3B4588783,PLzTiNL8wJzyD_82WrvvtcPc5xgcRwIhmc,PL0__z7c1lf8vLX7A7ourdKLpBmJXqqqvu,PLoBDkJXxnuE4MYAMNKjryc5yvD8L2zXyR," +
+                                        "PL0ZpYcTg19EF1niHfDu6oyPj40BHPr5gh,PL0ZpYcTg19EFYP_oDBwRsUGPYJoipkJpA,PLZ6CIf9zpADTic6OZ1zTaw5Sg3ySgeRHS,PLE1HL7ydDnKP4MF3ejvOcT5sCtm2tWkIi";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Telugu Movies")) {
+                                formatedVidsList = "PLoBDkJXxnuE66Hi8GBRCF9KNBWNo_TlDW,PLXBHKlMRm_yw3uUcxtmFuYPWOORr37oxK,PLMHbK5ZCEE8UI5TTGV46h2KjN7Y71xLmG,PLzTiNL8wJzyBdNAE4F8nE7Mf3kK7TwAh-,PLXBHKlMRm_yzK8djuuIJB-lAAA2WmXImb";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Telugu Hot Item Songs")) {
+                                formatedVidsList = "PLRSX77yV8Wsbr5u8Cld7tyi4dw2lCA3oc,PLj2XdQjbrSEGel_04JVuxjLrElvMo5jnn";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            }
+                            else if (selectedSubCategory.equalsIgnoreCase("Telugu Dance Special Songs")) {
+                                formatedVidsList = "PLoP3X4JX-s1S0f81XfnsBrlnv4ru9rH1d,PLHwuF0yy3RxWdDERguZ91QgwCeqLAOA4a,PLf5Bhjwoj6B-bpkD-xK1EyVewMs8ifr46";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Romantic")) {
                                 formatedVidsList = "PLURHF8ZY2Y56kupEqz3TVLD__Zj-tlPSd,PLAE95D5B634195317,PLURHF8ZY2Y54V-lQ4zE5ToS4gyALjjTJx," +
