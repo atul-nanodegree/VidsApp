@@ -18,6 +18,8 @@
         <item>Motivational</item>
         <item>Mythological</item>
         <item>Bollywood songs</item>
+        <item>Tamil special</item>
+        <item>Telugu special</item>
         <item>Shayari</item>
         <item>Kavi sammelan</item>
         <item>Bollywood movies</item>
@@ -366,6 +368,24 @@
         <item>Hits of the week</item>
         <item>Ghazals</item>
         <item>Sharaabi songs</item>
+        <item>Hindi Hot Item Songs</item>
+    </string-array>
+
+    <string-array name="tamil_list">
+        <item>A. R. Rahman Hit Tamil Songs</item>
+        <item>Ilayaraja Hit Tamil Songs</item>
+        <item>RajniKant Special</item>
+        <item>Kamal Hasan Special</item>
+        <item>Tamil Movies</item>
+        <item>Tamil Hot Item Songs</item>
+    </string-array>
+
+    <string-array name="telugu_list">
+        <item>S. P. Balasubrahmanyam Songs</item>
+        <item>Telugu Songs</item>
+        <item>Telugu Movies</item>
+        <item>Telugu Dance Special Songs</item>
+        <item>Telugu Hot Item Songs</item>
     </string-array>
 
     <string-array name="movies_list">
