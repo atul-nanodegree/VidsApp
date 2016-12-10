@@ -20,8 +20,7 @@
         <item>Bollywood songs</item>
         <item>Tamil special</item>
         <item>Telugu special</item>
-        <item>Shayari</item>
-        <item>Kavi sammelan</item>
+        <item>Shayari/Poetry</item>
         <item>Bollywood movies</item>
         <item>Kids</item>
         <item>Parenting</item>
@@ -588,6 +587,46 @@
         <item>WY0RznJOBy0</item>
         <item>QZy4CUjpA10</item>
 
+    </string-array>
+
+    <string-array name="shayari_poetry_list">
+        <item>Kavi sammelan</item>
+        <item>Hindi-urdu shayari</item>
+    </string-array>
+
+    <string-array name="kavi_sammelan_vids">
+        <item>PLA2A98E0BE58396CB</item>
+        <item>PLRZwUbTF-YkZTM-h4GI6cPwwKapcnbNyc</item>
+        <item>PLwjXQSniYJtJ68bZynEMOE_6kAfQTZo-h</item>
+        <item>PL-XbLxfa0fSurPg_tbKfAvKwx57A3Cz_I</item>
+        <item>PLEn7IxnSefurNbKk2QZEvhE1CvFHii6MP</item>
+        <item>PLpIdXviqZm9_6H3B-VOkVTVIzGPQcW2Dw</item>
+        <item>PLpIdXviqZm991-buG3neTWTyWn6-hRH9v</item>
+        <item>PLb3FBpx4sNP2CjnbafTBkh4GV4-oZAC2k</item>
+        <item>PLMyBfDMULf-qV1HYE26rZ9GqgOMEOyycz</item>
+        <item>PLxqqaGzPcT333WeE1M986NfZhFhNoTTsd</item>
+        <item>PLdsd2shqzhg_SjIGeIC_QoI9Vn6uGrFjs</item>
+        <item>PLrH8WWVYffmKD2m4-o4fxyijwxd4_fWJt</item>
+        <item>PLRZwUbTF-YkZ_Oj1VVlSIpUZsj3rTIS3B</item>
+        <item>PLasLwvWgv0UgWNvhGC2XQc88AlNGzwk8C</item>
+        <item>PL4Lg0-essiw1d5vBja0Ua2PXmcCYrWhez</item>
+        <item>PL1GlBKFsNzwDfFwcwyEBV8nJTq9fKG9KO</item>
+        <item>PLW2U16DvmuMHiX7tqZadS_sfo55WbDjuR</item>
+        <item>PLDrTk4igkG0WAMlHgJIk3bRdZp5M51bUI</item>
+        <item>PLu9WLu2vEEefgCe_9qfHR1YtpGj23ApHr</item>
+    </string-array>
+
+    <string-array name="shayari_vids">
+        <item>PLpe8Pk7zfp0UU3qepJLtRw-q1VUg2p6qx</item>
+        <item>PL70qqzD0jmok1BMEwFGpFaVlp_KKqXxZ7</item>
+        <item>PLxsNGP3A9EbSru5RU7ySa2DbH2TO_c83e</item>
+        <item>PLLZE5RT3GZ2xdEcMA4GfcnFwgztyCubHG</item>
+        <item>PLVLpQSJJETuZVY23ES-Y6iO2mHwwFVbHh</item>
+        <item>PLU6PdeCfcSvQBSQgjYwPrBLiKl3FngFv8</item>
+        <item>PLVarVRFOGsyQha-a8fMY_ZebcnS8w8Vgd</item>
+        <item>PLFdItitCzc0J09quiMwGHlf7O_Bcn4lMU</item>
+        <item>PLLZE5RT3GZ2zd07Uxdd8ndj_zwMjmwkkX</item>
+        <item>PL52ED3EE1CA130DE3</item>
     </string-array>
 
 </resources>

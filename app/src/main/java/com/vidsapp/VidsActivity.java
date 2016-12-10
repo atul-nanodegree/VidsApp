@@ -63,6 +63,8 @@ public class VidsActivity extends AppCompatActivity {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.beauty_tips_list));
                             } else if (selectedCategory.equalsIgnoreCase("Bollywood songs")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.songs_list));
+                            } else if (selectedCategory.equalsIgnoreCase("Shayari/Poetry")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.shayari_poetry_list));
                             }
                             else if (selectedCategory.equalsIgnoreCase("Tamil special")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.tamil_list));
@@ -234,7 +236,7 @@ public class VidsActivity extends AppCompatActivity {
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("A. R. Rahman Hit Tamil Songs")) {
-                                formatedVidsList = "PLo-rZP7UP-Fmhaxktws5YXUoVPXImE6rK,PL4QNnZJr8sROExTFqbu-4OJIWS4XHZbng";
+                                formatedVidsList = "PLo-rZP7UP-Fmhaxktws5YXUoVPXImE6rK,PL4QNnZJr8sROExTFqbu-4OJIWS4XHZbng,";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Ilayaraja Hit Tamil Songs")) {
@@ -251,7 +253,9 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Tamil Movies")) {
                                 formatedVidsList = "PLFAwfSsckJkQkhYY_4CNsHvKk2gSb9zKB,PLthizvY3wuX8KHZaynRSG61pbNY4JO_0m," +
-                                        "PLpsfNoniec7yl7AGshjrr_lUXsMAxZE0C,PLV6iX0NmV9IhSupxYo_mYdBYGbiJAkvYM,PLx8w5arTJ_r-G28ItZVbUJcj05iRIGkPG,";
+                                        "PLpsfNoniec7yl7AGshjrr_lUXsMAxZE0C," +
+                                        "PLV6iX0NmV9IhSupxYo_mYdBYGbiJAkvYM,PLx8w5arTJ_r-G28ItZVbUJcj05iRIGkPG,PLobdrPwSOEBzVMjnmxvruKS8T50qVb0xE," +
+                                        "PLvd-Pw0LMeSVyBQCyciYRSv4GdCXUfNB2,PLUFNI2g6uaW6qLO1A7qiBwQu5E7hwRr3X";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
 
@@ -483,6 +487,14 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("TV serials")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.serials_playlist));
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Kavi sammelan")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.kavi_sammelan_vids));
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Hindi-urdu shayari")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.shayari_vids));
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             if(VidsApplUtil.TYPE_VIDEO.equals(videoType)){
