@@ -73,6 +73,8 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedCategory.equalsIgnoreCase("Kids")) {
                                 initializeVidsSubCategory(getResources().getStringArray(R.array.kids_section));
+                            } else if (selectedCategory.equalsIgnoreCase("Mythological")) {
+                                initializeVidsSubCategory(getResources().getStringArray(R.array.mythological_list));
                             }
                         }
                     }
@@ -157,17 +159,23 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLMzHS1Fh7fElUHzikx0v71_qOtgt-h1wJ,PLL30uj4mBoYP-8-CZ-9fqW7KmuU2M2vy0,PL30D1D396F4CDFBB0," +
                                         "PL33748924FF32D510,PL7AD198111F85DB9C,PLE58787A354301DFE,PLHsv_F3G7XLXOQIZ60Bj7P2KkbFcZ5ph_," +
                                         "PLdSBm5cs_QX-H_LAu_6SZ2L9rUD__k2zR,PL4BD003AD44BA8658,PL_m7vkBtlHcBtQt9bWEMCpA8RB2crrdtY," +
-                                        "PLEpfh9jiEpYSYIUMQjeCO1lUmpYZv3Qtc";
+                                        "PLEpfh9jiEpYSYIUMQjeCO1lUmpYZv3Qtc,PL6yJ_wRlltkn2PASVNv9hl5FA_PF2aje1," +
+                                        "PL9RkVPgrltm6Tz4bXEpjaKX2cfW1UV5o5,PLC8F558ADFCC36381,PLjity7Lwv-zoY0kEMflSdq4jfSN123Zt8" +
+                                        "PL7J3pqkCagEn_E_9gXYFLHkDtJcacRoxm,PLfXBPjrIbg2ccBaZO0yNCcymQzLPY-tyG," +
+                                        "PLPCDrz-Og2T-u0oh_A-O0rwNekXyPWWbr,PLC12343C91911624A,PLEpfh9jiEpYTbAx1qZRhVUXnl8UHuTHIY," +
+                                        "PLg1BjcWzCFSYBOBmeR0NajiHXG0_LRQgw,PLVWtdc2bihyxeAe9fXdknxwuTPyrSdR57," +
+                                        "PLP4sPcNdogm31VTqOM50FTVG8JRe77O4B,PL4uUU2x5ZgR1JOlcY9SZB94MW6fBE8ovU";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Sad melodies")) {
                                 formatedVidsList = "PLEEDF17AE177F527B,PL509690A35754E24F,PL448273752D6A392B,PL4BC9A2F7F2B75D83," +
                                         "PL63EEC96AFCC324A4&index=4,PL901339D6BC9E5D73,PLACAFFF15158CE67E" +
-                                        "PL814FA5D5BEC48E7F,PL8E2CBE8655E5154F";
+                                        "PL814FA5D5BEC48E7F,PL8E2CBE8655E5154F,PLA6yIV3qMD7j2ohZs4HAI94yMwrxHtqa_";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Soft melodies")) {
                                 formatedVidsList = "PLYkopulgW-Z2cFmcf4d15Tao6Rak8WZYb,PL-tiXFkBA6IyMEVAno7PxyQ3s2yeMykjo," +
                                         "PLkClf2ueYJXhyyRSOAA0A3qjTMdcbgTNe,PL2540C704C182FA98,PL05CAD8640438D536," +
-                                        "PLiAttA3ZvGfk1vuF8Xq7j24sBsg4QuH17,PLeoPwI_un2DHGq6EZ2u6tWagq4FmXLpw9,PLpPW6R_JX0Uv34fU4ifzQjbC1TFSCZ3od";
+                                        "PLiAttA3ZvGfk1vuF8Xq7j24sBsg4QuH17,PLeoPwI_un2DHGq6EZ2u6tWagq4FmXLpw9,PLpPW6R_JX0Uv34fU4ifzQjbC1TFSCZ3od," +
+                                        "PLAE90B1604A57DB28";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Wedding special")) {
                                 formatedVidsList = "PLq7Fj9d8nmvNYtqRNdszwjloSUup_4NmG,PLaJZU9rQ6wK9KEUV1s0OUZqQ5q_9ueqo6," +
@@ -182,7 +190,7 @@ public class VidsActivity extends AppCompatActivity {
                             } else if (selectedSubCategory.equalsIgnoreCase("Singers collection")) {
                                 formatedVidsList = "PLcW36x0vC9XLd-z-Gu55FtTuQgxknRhd5,PLGMW_7AY_F42LG1ZtE5LnLT4bK42_sIDi," +
                                         "PL_ojMrMyUd15UV2hNQdFzyuYzENI68y6Y,PLqkoKqLHcWCyuG3bxMkOmH1Z18yFzny5i," +
-                                        "PLwOScGCjb93DDU64Ai0E-GbnbH3aOh3R2," +
+                                        "PLwOScGCjb93DDU64Ai0E-GbnbH3aOh3R2,PLebd87M1RwWVnywOe04Y5GlZfa4fHF4nY," +
                                         "PL9850DBE604B4D416,PLIoF1EmGOU3D8wjbiuTPSIPddPev1cj5h,PLRmdV1u90qKkT7l10w6c4OOxbbvNZxWdE," +
                                         "PLP15S8bV9o5bPHmsXzVvcG-WMa_7HDkyH,PLHdrJ3cHREuY_IpdqzaGMrZ0er03dE8SU," +
                                         "PL3492286914EC878C,PLhDMUiHBg1erHxiWeP8OkSeZ0i0CDxshQ,PL8E2DE298DB5DCCA8," +
@@ -191,6 +199,10 @@ public class VidsActivity extends AppCompatActivity {
                                         "PLgh_EjxPZ7fqwFgMvixpGOq1ndnz3tgJs,PLARm22A77n4N9sMd_AeI9AOCOY3rCkWKP," +
                                         "PLD6DB477019E5F012,PLShHEGqasFSzx81JoKnDUtfFUokISYA3F";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } if (selectedSubCategory.equalsIgnoreCase("Rock the dance floor")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.dance_florr_playlist));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Latest jukebox")) {
                                 formatedVidsList = "UCFdfwBIBO0t8u06PvApgnPg";
                                 videoType = VidsApplUtil.TYPE_CHANNEL;
@@ -405,6 +417,14 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("NODDY in English")) {
                                 formatedVidsList = "PLiluoe0QNL4EXc5qYPJWoqZ2iyBPk3ybk";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Bhajans")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.bhajans_playlist));
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("TV serials")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.serials_playlist));
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             if(VidsApplUtil.TYPE_VIDEO.equals(videoType)){

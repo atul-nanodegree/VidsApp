@@ -29,7 +29,6 @@ public class VidsFavoriteActivity extends BaseActivity {
     private RecyclerView mRecyclerView;
     private VidsFavoriteAdapter mDoclevelListAdapter;
 
-    private List<String> videoItemDuration = null;
     private ProgressBar pBar;
     private CoordinatorLayout mMainCoordinatorLayout;
     private String vidsIds;
@@ -52,7 +51,7 @@ public class VidsFavoriteActivity extends BaseActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        if (vidsIds == null || vidsIds =="") {
+        if (vidsIds == null || vidsIds.equals("")) {
             // TBD show some message
         } else  if(!NetworkUtil.isConnected(this)) {
             Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)

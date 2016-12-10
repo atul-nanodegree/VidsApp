@@ -357,6 +357,7 @@
         <item>Wedding special</item>
         <item>Choice of Punjabi</item>
         <item>Singers collection</item>
+        <item>Rock the dance floor</item>
         <item>Latest jukebox</item>
         <item>Sune ansune gaane</item>
         <item>Remix jukebox</item>
@@ -495,6 +496,78 @@
         <item>t1p9QWyVNP0</item>
         <item>azbrgGSZH4M</item>
         <item>XGG1famGvLY</item>
+    </string-array>
+
+    <string-array name="mythological_list">
+        <item>Bhajans</item>
+        <item>Chalisa</item>
+        <item>Aarti</item>
+        <item>Mantr</item>
+        <item>TV serials</item>
+    </string-array>
+
+    <string-array name="bhajans_playlist">
+        <item>PLM3TSQaW_spMU84Jl6QzXejUdZcQcZbEI</item>
+        <item>PLBDDA9B58A10CCD89</item>
+        <item>PLhG-EP3OHRZ0siPXBWz9IJvnXiGHiP0ZI</item>
+        <item>PLLEP0IdOrmU7fkB8pnUVi6106ILfsNjrP</item>
+        <item>PLzRbcbIdYvQGyrW950FuuFGSdvTbmqYQ6</item>
+        <item>PLtaAHAUiQaL-imwCEx9Mz34pUEobJFLsv</item>
+        <item>PLmEovP2uO2C-VBHekzVuwSMNP9kkPr3_7</item>
+        <item>PL0600361D46AF47E7</item>
+        <item>PLU2Xb_bLX9dpF1FbAuIw_gp2JD72fBil8</item>
+        <item>PL20B425742CB4BCCD</item>
+        <item>PLC02AE23647951CFC</item>
+        <item>PLgtf120vC-45I7o9AwgLZ1SpKC_yZT4pC</item>
+        <item>PLC131322D22FE814D</item>
+        <item>PL7mJQOHGnaYI52quOZiq86l6DVKJgTqXs</item>
+        <item>PL-4scAD7lQBznf6H7UgdVKZpE-XFDI9gr</item>
+        <item>PL4424C67A766E6C08</item>
+        <item>PL6VRWt7_anac6ZMKiCwbACbvdSoa4dtzx</item>
+        <item>PLF34BA3A19DB96FE9</item>
+        <item>PLFD8E7E3C0F1D8478</item>
+        <item>PL7951BF6E959F4F95</item>
+        <item>PL74AC69874C1AE70E</item>
+        <item>PLC174CB059566ACC4</item>
+        <item>PLF5CD1684AA5767CA</item>
+        <item>PLdOHwWWJhcjf0QbkWY6ZOLV51-Geax9AS</item>
+        <item>PLYhK5iekh44K5-yL2XkVbqlD-KUK31CB6</item>
+        <item>PLEqBALZ4udy7C5RgbeX5KjZcBT6KSupNU</item>
+        <item>PL80BB72682317E0F9</item>
+        <item>PLyXHXSHxLqKyv8rSxcsOTDfEjQKPjEQeG</item>
+        <item>PL589DF3AE9E9BA8BF</item>
+
+    </string-array>
+
+    <string-array name="serials_playlist">
+        <item>PL-nbe4FPvDBElyW0Iww5suxJqqmuGBgIH</item>
+        <item>PLWT5l3utuKIO0YKWc8kl1OdimlycmxnAH</item>
+        <item>PL-NRrjK61OD38i9X7KO5qrFKrWvpHubM5</item>
+        <item>PLWT5l3utuKIO0YKWc8kl1OdimlycmxnAH/00026index=5</item>
+        <item>PLtaXzx-VKKfF-BCfR4xhJHu4YmuPVKkMf</item>
+        <item>PL57F01972FF119B66</item>
+        <item>PLAIeZwZeLusQD_9Uh5kqORfowVBsUwLAm</item>
+        <item>PLjIBk4WSQlY5nAR8j_u12NNtXZpCtG3xU</item>
+        <item>PLYDXIBIOjPJM2e4mO_NBzb--EMhK9KHAF</item>
+
+    </string-array>
+
+    <string-array name="dance_florr_playlist">
+        <item>ytQMzNdD3tc</item>
+        <item>H5LQq4MPIao</item>
+        <item>oCD6A0n-fP8</item>
+        <item>QZy4CUjpA10</item>
+        <item>NZs1YdewZKU</item>
+        <item>PvyzEvbaXMk</item>
+        <item>ImwmMUVyoT8</item>
+        <item>2qdQfTohxyk</item>
+        <item>Dj__ZfjFrco</item>
+        <item>UDgxxIOsVFo</item>
+        <item>Q1cHyZwhXcc</item>
+        <item>9Qf4wE2W-As</item>
+        <item>WY0RznJOBy0</item>
+        <item>QZy4CUjpA10</item>
+
     </string-array>
 
 </resources>
