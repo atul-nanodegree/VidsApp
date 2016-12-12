@@ -49,9 +49,14 @@ public class YoutubePlaylistActivity extends  BaseActivity {
         setContentView(R.layout.activity_youtube_playlist);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setActionbarTitle("PlayList",false,R.id.toolbar);
+        if (getIntent().getStringExtra(APITags.PLAYLIST_TITLE) != null) {
 
-       // setActionbarTitle("Playlist", true, R.id.toolbar);
+            setActionbarTitle(getIntent().getStringExtra(APITags.PLAYLIST_TITLE),false,R.id.toolbar);
+        }
+        else{
+            setActionbarTitle("PlayList",false,R.id.toolbar);
+
+        }
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.youtube_playlist_recyclerview);
@@ -72,10 +77,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
         if (getIntent().getStringExtra(APITags.ID) != null) {
 
             mId = getIntent().getStringExtra(APITags.ID);
-            if (getIntent().getStringExtra(APITags.PLAYLIST_TITLE) != null) {
 
-                mPlaylistTitle.setText(getIntent().getStringExtra(APITags.PLAYLIST_TITLE));
-            }
 
             if (NetworkUtil.isConnected(YoutubePlaylistActivity.this)) {
                 new YoutubeTask().execute();
@@ -123,6 +125,12 @@ public class YoutubePlaylistActivity extends  BaseActivity {
                     mDoclevelListAdapter.setDataList(videoListItmeArrayList);
 
                     mRecyclerView.setAdapter(mDoclevelListAdapter);
+                    mPlaylistAll.setVisibility(View.VISIBLE);
+                    mPlaylistTitle.setVisibility(View.VISIBLE);
+
+
+                        mPlaylistTitle.setText(videoListItmeArrayList.size()+" "+"Videos");
+
 
 
                 } else {
