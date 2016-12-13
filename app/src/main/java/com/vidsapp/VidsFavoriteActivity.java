@@ -129,7 +129,7 @@ public class VidsFavoriteActivity extends BaseActivity {
         builder.append("To mark the video as your favorite, please tap on").append(" ");
         builder.setSpan(new ImageSpan(this, R.drawable.fav_no_info),
                 builder.length() - 1, builder.length(), 0);
-        builder.append("icon at the top corner of video thumbnail.");
+        builder.append("icon at the top right corner of video thumbnail.");
         no_fav_text.setText(builder);
     }
 
