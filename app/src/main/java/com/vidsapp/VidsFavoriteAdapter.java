@@ -1,5 +1,6 @@
 package com.vidsapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -105,6 +106,11 @@ public class VidsFavoriteAdapter extends RecyclerView.Adapter<VidsFavoriteAdapte
             mYoutubePlaylistsList.remove(getAdapterPosition());
             notifyItemRemoved(getAdapterPosition());
             notifyItemRangeChanged(getAdapterPosition(), mYoutubePlaylistsList.size());
+
+            if (mYoutubePlaylistsList.size() == 0) {
+                VidsFavoriteActivity vidsFavActivity = (VidsFavoriteActivity) mContext;
+                vidsFavActivity.getNoFavLayout().setVisibility(View.VISIBLE);
+            }
         }
 
     }

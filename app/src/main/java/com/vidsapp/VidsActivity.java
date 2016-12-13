@@ -439,6 +439,10 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = "\n" +
                                         "PL7AowHd5QvCq2dOzdHchSO7d4dR3oiOJP";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Disney Junior")) {
+                                formatedVidsList = "\n" +
+                                        "PLI-nQtOHVKRu0erW8Khquk1pRvEHDpR7i,PLrLu47k41a8QTEAgmldgX08HTiloFx8wC";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Chhota Bheem")) {
                                 formatedVidsList = "\n" +

@@ -8,6 +8,7 @@
     <string name="action_feedback">Feedback</string>
     <string name="action_share">Share App</string>
     <string name="action_rate">Rate App</string>
+    <string name="action_about">About</string>
     <string name="empty">empty</string>
     <string name="videos">Videos</string>
     <string name="play_all">Play all</string>
@@ -418,6 +419,7 @@
         <item>Animation Movies</item>
         <item>Tom and Jerry</item>
         <item>Doraemon</item>
+        <item>Disney Junior</item>
         <item>Chhota Bheem</item>
         <item>Very Funny Cartoons</item>
         <item>Motu Patlu</item>

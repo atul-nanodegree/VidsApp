@@ -8,11 +8,6 @@
         android:title="@string/action_favorite"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_watchlist"
-        android:orderInCategory="100"
-        android:title="@string/action_watchlist"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_feedback"
         android:orderInCategory="100"
         android:title="@string/action_feedback"
@@ -26,5 +21,11 @@
         android:id="@+id/action_rate"
         android:orderInCategory="100"
         android:title="@string/action_rate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="@string/action_about"
         app:showAsAction="never" />
 </menu>

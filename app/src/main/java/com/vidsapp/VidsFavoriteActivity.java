@@ -8,12 +8,18 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vidsapp.util.VidsApplUtil;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -22,7 +28,7 @@ import java.util.List;
  */
 public class VidsFavoriteActivity extends BaseActivity {
 
-    private YoutubeNtOVideosListEntity           videoListEntity        = null;
+    private YoutubeNtOVideosListEntity videoListEntity = null;
     private List<YoutubeNtOVideosListItemEntity> videoListItmeArrayList = null;
     private static final String TAG = "VidsFavoriteActivity.class";
 
@@ -32,6 +38,7 @@ public class VidsFavoriteActivity extends BaseActivity {
     private ProgressBar pBar;
     private CoordinatorLayout mMainCoordinatorLayout;
     private String vidsIds;
+    private RelativeLayout no_fav_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +53,20 @@ public class VidsFavoriteActivity extends BaseActivity {
         pBar = (ProgressBar) findViewById(R.id.progressbar);
         vidsIds = getIntent().getStringExtra(VidsApplUtil.TYPE_VIDEO);
         mDoclevelListAdapter = new VidsFavoriteAdapter(this);
-        mMainCoordinatorLayout=(CoordinatorLayout)findViewById(R.id.coordinatelayout);
+        mMainCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatelayout);
+
+        no_fav_layout = (RelativeLayout) findViewById(R.id.no_fav_layout);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        initializeFavTextInfo();
 
         if (vidsIds == null || vidsIds.equals("")) {
-            // TBD show some message
-        } else  if(!NetworkUtil.isConnected(this)) {
+            no_fav_layout.setVisibility(View.VISIBLE);
+        } else if (!NetworkUtil.isConnected(this)) {
             Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         } else {
-            // TBD start the Asynctask here to load
             new YoutubeTask().execute();
         }
 
@@ -65,7 +74,7 @@ public class VidsFavoriteActivity extends BaseActivity {
 
     private class YoutubeTask extends AsyncTask<String, Integer, YoutubeNtOVideosListEntity> {
         protected YoutubeNtOVideosListEntity doInBackground(String... urls) {
-            ApiYoutube a=new ApiYoutube();
+            ApiYoutube a = new ApiYoutube();
 //            YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("video","cQcSkiOX4c8,wspLLHypZ4M,qYCIci0BHc4,hYorcTW9apA");
             //YoutubeNtOVideosListEntity   youtubeNtOVideosListEntity=  a.intiateAPICall("channel","UCDS9hpqUEXsXUIcf0qDcBIA");
             YoutubeNtOVideosListEntity youtubeNtOVideosListEntity = a.intiateAPICall(VidsApplUtil.TYPE_VIDEO, vidsIds);
@@ -91,11 +100,9 @@ public class VidsFavoriteActivity extends BaseActivity {
 
                 if (videoListItmeArrayList != null && videoListItmeArrayList.size() > 0) {
 
-
                     mDoclevelListAdapter.setDataList(videoListItmeArrayList);
 
                     mRecyclerView.setAdapter(mDoclevelListAdapter);
-
 
                 } else {
                     Toast.makeText(VidsFavoriteActivity.this, "videoListItmeArrayList is null", Toast.LENGTH_SHORT).show();
@@ -103,8 +110,6 @@ public class VidsFavoriteActivity extends BaseActivity {
             } else {
                 Toast.makeText(VidsFavoriteActivity.this, "videoListEntity is null", Toast.LENGTH_SHORT).show();
             }
-
-            //  Log.i("logs for youtube",result.getNextPageToken());
 
         }
     }
@@ -116,5 +121,19 @@ public class VidsFavoriteActivity extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    private void initializeFavTextInfo() {
+        TextView no_fav_text = (TextView) findViewById(R.id.no_fav_text);
+        SpannableStringBuilder builder = new SpannableStringBuilder();
+        builder.append("To mark the video as your favorite, please tap on").append(" ");
+        builder.setSpan(new ImageSpan(this, R.drawable.fav_no_info),
+                builder.length() - 1, builder.length(), 0);
+        builder.append("icon at the top corner of video thumbnail.");
+        no_fav_text.setText(builder);
+    }
+
+    public RelativeLayout getNoFavLayout() {
+        return no_fav_layout;
     }
 }
