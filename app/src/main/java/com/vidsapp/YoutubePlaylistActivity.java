@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +36,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
     private YoutubeVideosListAdapter mDoclevelListAdapter;
 
 
-    private TextView mPlaylistAll;
+    private ImageView mPlaylistAll;
     private TextView mPlaylistTitle;
 
     private String mId;
@@ -62,7 +63,7 @@ public class YoutubePlaylistActivity extends  BaseActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.youtube_playlist_recyclerview);
 
 
-        mPlaylistAll = (TextView) findViewById(R.id.playall);
+        mPlaylistAll = (ImageView) findViewById(R.id.playall);
         mPlaylistTitle = (TextView) findViewById(R.id.video_count);
 
         pBar = (ProgressBar) findViewById(R.id.progressbar);

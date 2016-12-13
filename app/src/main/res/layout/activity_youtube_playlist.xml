@@ -33,22 +33,16 @@
         android:textColor="@android:color/holo_red_light"
         android:visibility="gone"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/playall"
         android:layout_below="@+id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="25dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/margin_20dp"
-        android:layout_marginTop="@dimen/margin_20dp"
-        android:text="@string/play_all"
-        android:shadowColor="@color/white"
-        android:shadowDx="1"
-        android:shadowDy="3"
-        android:shadowRadius="2"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/holo_red_light"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/ic_play_small"
+        android:background="#ff0000"
         android:visibility="gone"/>
 
     <android.support.v7.widget.RecyclerView
