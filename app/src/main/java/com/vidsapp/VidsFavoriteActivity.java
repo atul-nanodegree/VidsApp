@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -57,8 +58,17 @@ public class VidsFavoriteActivity extends BaseActivity {
 
         no_fav_layout = (RelativeLayout) findViewById(R.id.no_fav_layout);
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        if (VidsApplUtil.isTablet(this)) {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(this, ApplicationConstants.PLAYLIST_NUM_COLUMNS));
+            ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.margin_10dp);
+            mRecyclerView.addItemDecoration(itemDecoration);
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        } else {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        }
+
         initializeFavTextInfo();
 
         if (vidsIds == null || vidsIds.equals("")) {

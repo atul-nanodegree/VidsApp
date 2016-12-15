@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.vidsapp.util.VidsApplUtil;
 
 import java.util.List;
 
@@ -70,10 +71,16 @@ public class YoutubePlaylistActivity extends  BaseActivity {
 
         mDoclevelListAdapter = new YoutubeVideosListAdapter(this);
 
-
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        if (VidsApplUtil.isTablet(this)) {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(this, ApplicationConstants.PLAYLIST_NUM_COLUMNS));
+            ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.margin_10dp);
+            mRecyclerView.addItemDecoration(itemDecoration);
             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        } else {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        }
 
         if (getIntent().getStringExtra(APITags.ID) != null) {
 

@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -52,9 +53,16 @@ public class VideosListFragment extends Fragment implements VidsActivity.FetchVi
         VidsActivity activity = (VidsActivity) mContext;
         activity.setFetchVideoListener(this);
         mDoclevelListAdapter = new YoutubeNewTOldVideosListAdapter(mContext);
+        if (VidsApplUtil.isTablet(getActivity().getBaseContext())) {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, ApplicationConstants.PLAYLIST_NUM_COLUMNS));
+            ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(mContext, R.dimen.margin_10dp);
+            mRecyclerView.addItemDecoration(itemDecoration);
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        } else {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        }
         pBar = (ProgressBar) rootView.findViewById(R.id.progressbar);
         return rootView;
     }

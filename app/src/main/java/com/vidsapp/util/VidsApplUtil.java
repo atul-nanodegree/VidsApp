@@ -1,6 +1,7 @@
 package com.vidsapp.util;
 
 import android.content.Context;
+import android.content.res.Configuration;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -50,5 +51,9 @@ public class VidsApplUtil {
         catch(Exception e){
         }
         return data;
+    }
+
+    public static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 }
