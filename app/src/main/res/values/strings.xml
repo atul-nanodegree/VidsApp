@@ -645,5 +645,6 @@
         <item>PLLZE5RT3GZ2zd07Uxdd8ndj_zwMjmwkkX</item>
         <item>PL52ED3EE1CA130DE3</item>
     </string-array>
-
+    <string name="banner_home_footer">ca-app-pub-3233306799941518/2558410588</string>
+    <string name="interstitial_full_screen">xxxx</string>
 </resources>
