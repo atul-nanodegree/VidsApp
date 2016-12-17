@@ -12,6 +12,8 @@
     <string name="empty">empty</string>
     <string name="videos">Videos</string>
     <string name="play_all">Play all</string>
+    <string name="add_favorite">Added to favorite</string>
+    <string name="remove_favorite">Removed from favorite</string>
 
     <string-array name="vids_category">
         <item>Home remedies</item>

@@ -101,7 +101,8 @@ public class VidsFavoriteAdapter extends RecyclerView.Adapter<VidsFavoriteAdapte
             String finalData = currentData.replace("," + videoId, "");
             VidsApplUtil.writeDataInFile(mContext, VidsApplUtil.FAV_FILE_NAME,
                     finalData);
-            Toast.makeText(mContext, "Removed to favorite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, mContext.getResources().getString(
+                    R.string.remove_favorite), Toast.LENGTH_SHORT).show();
             Log.i("VidsActivity", "Fav file data = " + VidsApplUtil.readDataFromFile(mContext, VidsApplUtil.FAV_FILE_NAME));
             mYoutubePlaylistsList.remove(getAdapterPosition());
             notifyItemRemoved(getAdapterPosition());

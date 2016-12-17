@@ -120,7 +120,8 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
             VidsApplUtil.writeDataInFile(mContext, VidsApplUtil.FAV_FILE_NAME,
                     finalData);
             notifyDataSetChanged();
-            Toast.makeText(mContext, "Added to favorite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, mContext.getResources().getString(
+                    R.string.add_favorite), Toast.LENGTH_SHORT).show();
             Log.i("VidsActivity", "Fav file data = " + VidsApplUtil.readDataFromFile(mContext, VidsApplUtil.FAV_FILE_NAME));
         }
 
@@ -131,7 +132,8 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
             VidsApplUtil.writeDataInFile(mContext, VidsApplUtil.FAV_FILE_NAME,
                     finalData);
             notifyDataSetChanged();
-            Toast.makeText(mContext, "Removed to favorite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, mContext.getResources().getString(
+                    R.string.remove_favorite), Toast.LENGTH_SHORT).show();
             Log.i("VidsActivity", "Fav file data = " + VidsApplUtil.readDataFromFile(mContext, VidsApplUtil.FAV_FILE_NAME));
         }
 
