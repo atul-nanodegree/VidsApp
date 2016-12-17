@@ -24,7 +24,6 @@
         <item>Shayari/Poetry</item>
         <item>Bollywood movies</item>
         <item>Kids</item>
-        <item>Parenting</item>
         <item>Food recipes</item>
         <item>News channels</item>
     </string-array>
@@ -428,9 +427,7 @@
         <item>Bob The Builder English</item>
         <item>NODDY in Hindi</item>
         <item>NODDY in English</item>
-
-
-
+        <item>Parenting tips/guidelines</item>
 
     </string-array>
 
@@ -527,9 +524,9 @@
         <item>PL31CDAC33BDD61B09</item>
         <item>PLn5XCPzTVSYarZ8VoTHBrA1GCVw26DjiX</item>
         <item>PL0vj7O8wvGCqT85AzAISiRUSzZkNuWKxS</item>
-        <item>PLM3TSQaW_spMU84Jl6QzXejUdZcQcZbEI</item>
         <item>PLliWtuhJQOC0DhjVzS-A0guSXnVGdXE7n</item>
         <item>PL1B348706BD18331C</item>
+        <item>PLM3TSQaW_spMU84Jl6QzXejUdZcQcZbEI</item>
         <item>PLBDDA9B58A10CCD89</item>
         <item>PLhG-EP3OHRZ0siPXBWz9IJvnXiGHiP0ZI</item>
         <item>PLLEP0IdOrmU7fkB8pnUVi6106ILfsNjrP</item>
@@ -571,7 +568,6 @@
         <item>PLC3070032CA79405E</item>
         <item>PLCinEgs-Q02e-gmzcc8eTWm_4_3WwZM7i</item>
         <item>PL5bGpMcXz3RJzxizl3J7Xjt4EH1TMNpzW</item>
-        <item>PL5bGpMcXz3RJzxizl3J7Xjt4EH1TMNpzW</item>
 
     </string-array>
 
@@ -580,8 +576,8 @@
         <item>PLWT5l3utuKIO0YKWc8kl1OdimlycmxnAH</item>
         <item>PL-NRrjK61OD38i9X7KO5qrFKrWvpHubM5</item>
         <item>PLWT5l3utuKIO0YKWc8kl1OdimlycmxnAH/00026index=5</item>
-        <item>PLtaXzx-VKKfF-BCfR4xhJHu4YmuPVKkMf</item>
         <item>PL57F01972FF119B66</item>
+        <item>PLtaXzx-VKKfF-BCfR4xhJHu4YmuPVKkMf</item>
         <item>PLAIeZwZeLusQD_9Uh5kqORfowVBsUwLAm</item>
         <item>PLjIBk4WSQlY5nAR8j_u12NNtXZpCtG3xU</item>
         <item>PLYDXIBIOjPJM2e4mO_NBzb--EMhK9KHAF</item>

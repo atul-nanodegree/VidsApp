@@ -432,12 +432,14 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Tom and Jerry")) {
                                 formatedVidsList = "\n" +
-                                        "PLOLEQVkmI9eugSKUsrQBH0rxMN-qBLUyV";
+                                        "PLOLEQVkmI9eugSKUsrQBH0rxMN-qBLUyV,PLwp8m9anCLK3jmItMyLTgfNpM-526z8Cl," +
+                                        "PLTpHF7zUZcc0h3BLxEJuSEcG-GTsrtA85";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Doraemon")) {
                                 formatedVidsList = "\n" +
-                                        "PL7AowHd5QvCq2dOzdHchSO7d4dR3oiOJP";
+                                        "PL7AowHd5QvCq2dOzdHchSO7d4dR3oiOJP,PL7AowHd5QvCo2uz9xyU2Lof3_uz-LPGMG," +
+                                        "PL7AowHd5QvCqYOdUZ2dPEfSeKxOdNwMvG,PLUJRY7F6BIGrUgrYuv_e0895iW97jnC-F";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Disney Junior")) {
                                 formatedVidsList = "\n" +
@@ -446,7 +448,9 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Chhota Bheem")) {
                                 formatedVidsList = "\n" +
-                                        "PL3A3Us6jIaWQkU6NAnAuGPyXJFZkIoqRs";
+                                        "PL3A3Us6jIaWQkU6NAnAuGPyXJFZkIoqRs,PLFf9vSAD6FtpIXLY83wIS4CpRWxlAJZMO," +
+                                        "PL0rMr_qVm_FLR09J5s3pqLFJf87bhRUKq,PLhPu2jwebYCmtyoS1KTQDANKcvPjqYRtg," +
+                                        "PLmcXlFHrXrBCYHTXyeK4U9r96VuiAk_8d";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Very Funny Cartoons")) {
@@ -454,7 +458,8 @@ public class VidsActivity extends AppCompatActivity {
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Motu Patlu")) {
-                                formatedVidsList = "PLkffMCxtJZZRkHFE_Wp4GQiIPqgud3EZu";
+                                formatedVidsList = "PLkffMCxtJZZRkHFE_Wp4GQiIPqgud3EZu,PL0Jedq5WL3qG_nPthRIzkBZSVLq0xAN72," +
+                                        "PLFf9vSAD6FtrtZvesJqGQmHIxiw169Efp";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("Oggy And The Cockroaches")) {
@@ -483,6 +488,13 @@ public class VidsActivity extends AppCompatActivity {
                             }
                             else if (selectedSubCategory.equalsIgnoreCase("NODDY in English")) {
                                 formatedVidsList = "PLiluoe0QNL4EXc5qYPJWoqZ2iyBPk3ybk";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Parenting tips/guidelines")) {
+                                formatedVidsList = "PL9sA8HKjDkC_TWnYbLPBo79XPtkcTZO8V," +
+                                        "PLa0TAGDLF77orWYXhoEn2E3IeLQLQz8R5," +
+                                        "PLqbvA-TUu6H6g-G5f71-1u2dOjK34bFtd," +
+                                        "PLrRNujJ2zctynmFGHrIQ0IAks1-6G-0q_," +
+                                        "PLWv6Z9ksk7OMsFqb5MRJv-gbPkqGE_VKJ";
                                 videoType = VidsApplUtil.TYPE_PLAYLIST;
                             } else if (selectedSubCategory.equalsIgnoreCase("Bhajans")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
