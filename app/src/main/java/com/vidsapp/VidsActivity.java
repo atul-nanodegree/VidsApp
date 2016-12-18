@@ -7,13 +7,19 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.vidsapp.util.VidsApplUtil;
 
 public class VidsActivity extends AppCompatActivity {
@@ -22,12 +28,38 @@ public class VidsActivity extends AppCompatActivity {
     private  CoordinatorLayout mMainCoordinatorLayout;
     private VideosListFragment mVideoFragment;
     private Fragment mPlayListFragment;
+    private AdView mAdView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vids);
+
+
+        //Displaying banner ads at bottom of screen
+
+      //  mAdView = (AdView) findViewById(R.id.adView);
+
+        mAdView=new AdView(this);
+        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdUnitId(getResources().getString(R.string.banner_home_footer));
+
+        final FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.BOTTOM;
+        // layoutParams.gravity = isTopPosition ? Gravity.TOP : Gravity.BOTTOM;
+
+        this.addContentView(mAdView, layoutParams);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                // Add a test device to show Test Ads
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                //.addTestDevice("501CA82BA12681A250E422CC4BF70A13") //Random Text
+                .build();
+        mAdView.loadAd(adRequest);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        toolbar.setLogo(R.drawable.icon);
