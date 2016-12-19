@@ -36,14 +36,13 @@
         <item>Obesity</item>
         <item>High cholesterol</item>
         <item>Heart diseases</item>
+        <item>Dengue / Fever</item>
         <item>Headache / Migraine</item>
         <item>Liver disorders</item>
         <item>Improving eye sights</item>
-        <item>Reduce belly fat</item>
         <item>Cough and cold</item>
         <item>Sinusitis</item>
         <item>Gastric</item>
-        <item>Fever</item>
         <item>Giddiness</item>
         <item>Loose motion</item>
         <item>Vomiting</item>
@@ -643,6 +642,18 @@
         <item>PLLZE5RT3GZ2zd07Uxdd8ndj_zwMjmwkkX</item>
         <item>PL52ED3EE1CA130DE3</item>
     </string-array>
+
+    <string-array name="dandruff_vids">
+        <item>NOlo71CDklQ</item>
+        <item>g64g4OriyQw</item>
+        <item>j9RdgEAiWbo</item>
+        <item>rIkSzdqNarU</item>
+        <item>mYwIntAlGVs</item>
+        <item>I0lOsrty5t8</item>
+        <item>chKreZrBU7I</item>
+        <item>eD3-4rLPq8k</item>
+    </string-array>
+
     <string name="banner_home_footer">ca-app-pub-3233306799941518/2558410588</string>
     <string name="interstitial_full_screen">xxxx</string>
 </resources>

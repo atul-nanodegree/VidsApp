@@ -161,6 +161,18 @@ public class VidsActivity extends AppCompatActivity {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.heart_vids));
                                 videoType = VidsApplUtil.TYPE_VIDEO;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Dengue / Fever")) {
+                                formatedVidsList = "PL3VNq9vJiHYiDQKw7y9INSjUF5fesm7ww," +
+                                        "PLx_SXrzz9En9k7PxkhxHNzgbQIhGUMflh," +
+                                        "PLx_SXrzz9En9ig7toZLXuIYXiB9yKi4bw," +
+                                        "PLIEH2_hww8lzKOgB4v5CgXA_kpmJJzZdQ," +
+                                        "PLQtlDeMxHkRi00saV53BiREAspJTYZSFu," +
+                                        "PL2pHEdOz05rUzcL4nlpMR_iEocBuHUAkz";
+                                videoType = VidsApplUtil.TYPE_PLAYLIST;
+                            } else if (selectedSubCategory.equalsIgnoreCase("Dandruff")) {
+                                formatedVidsList = VidsApplUtil.formatVidsList(
+                                        getResources().getStringArray(R.array.dandruff_vids));
+                                videoType = VidsApplUtil.TYPE_VIDEO;
                             } else if (selectedSubCategory.equalsIgnoreCase("Sandeep Maheshwari")) {
                                 formatedVidsList = VidsApplUtil.formatVidsList(
                                         getResources().getStringArray(R.array.motiv_sandeep_m_vids));
@@ -572,7 +584,7 @@ public class VidsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(!NetworkUtil.isConnected(this)) {
-            Snackbar.make(mMainCoordinatorLayout, "No internet connection.Check your connection and try again", Snackbar.LENGTH_LONG)
+            Snackbar.make(mMainCoordinatorLayout, "Uh oh! No internet connection. Try again later!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
         YoutubeNewTOldVideosListAdapter adapter = mVideoFragment.getAdapter();
