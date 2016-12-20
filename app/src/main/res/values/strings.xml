@@ -654,6 +654,8 @@
         <item>eD3-4rLPq8k</item>
     </string-array>
 
-    <string name="banner_home_footer">ca-app-pub-3233306799941518/2558410588</string>
+    <string name="banner_home_footer_video">ca-app-pub-3233306799941518/2558410588</string>
+    <string name="banner_home_footer_playlistvideo">ca-app-pub-3233306799941518/2921350587</string>
+    <string name="banner_home_footer_favouritevideo">ca-app-pub-3233306799941518/4398083781</string>
     <string name="interstitial_full_screen">ca-app-pub-3233306799941518/9512940982</string>
 </resources>

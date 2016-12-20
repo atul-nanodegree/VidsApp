@@ -43,7 +43,7 @@ public class VidsActivity extends AppCompatActivity {
 
         mAdView=new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId(getResources().getString(R.string.banner_home_footer));
+        mAdView.setAdUnitId(getResources().getString(R.string.banner_home_footer_video));
 
         final FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
