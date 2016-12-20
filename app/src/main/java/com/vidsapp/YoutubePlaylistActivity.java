@@ -13,12 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.vidsapp.util.VidsApplUtil;
 
 import java.util.List;
@@ -43,12 +47,36 @@ public class YoutubePlaylistActivity extends  BaseActivity {
     private String mId;
     private List<String> videoItemDuration = null;
     private ProgressBar pBar;
+    private AdView mAdView;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_playlist);
+       ///Displaying banner ads at bottom of screen
+
+                //  mAdView = (AdView) findViewById(R.id.adView);
+
+        mAdView=new AdView(this);
+        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdUnitId(getResources().getString(R.string.banner_home_footer_playlistvideo));
+
+        final FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.BOTTOM;
+        // layoutParams.gravity = isTopPosition ? Gravity.TOP : Gravity.BOTTOM;
+
+        this.addContentView(mAdView, layoutParams);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                // Add a test device to show Test Ads
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                //.addTestDevice("501CA82BA12681A250E422CC4BF70A13") //Random Text
+                .build();
+        mAdView.loadAd(adRequest);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getIntent().getStringExtra(APITags.PLAYLIST_TITLE) != null) {
