@@ -50,11 +50,15 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
 
         // set the ad unit ID
         //Real Ads
-       // mInterstitialAd.setAdUnitId(mContext.getString(R.string.interstitial_full_screen));
+        mInterstitialAd.setAdUnitId(mContext.getString(R.string.interstitial_full_screen));
         //Test Ads
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+       // mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 
-
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
         return new ViewHolder(view);
     }
 
@@ -119,7 +123,7 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
                     // Load ads into Interstitial Ads
                     mInterstitialAd.loadAd(adRequest);
                     //Adding Ads on Odd click
-                    showInterstitial();
+                   // showInterstitial();
 
 
                 }
@@ -137,7 +141,7 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
                     // Load ads into Interstitial Ads
                     mInterstitialAd.loadAd(adRequest);
                     //Adding Ads on Odd click
-                    showInterstitial();
+                   // showInterstitial();
 
 
                 }
@@ -148,9 +152,21 @@ public class YoutubeNewTOldVideosListAdapter extends RecyclerView.Adapter<Youtub
                 mContext.startActivity(Intent.createChooser(shareIntent, "Share this Video with..."));
 
             } else  if (v.getId() == R.id.fav_no) {
+                if(getAdapterPosition()%2==0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
                 // persist the video id in internal file storage
                 addToFavorite();
             } else  if (v.getId() == R.id.fav_yes) {
+                if(getAdapterPosition()%2==0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
                 // remove the video from internal file storage
                 removeFromFavorite();
             }
