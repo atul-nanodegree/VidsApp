@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.squareup.picasso.Picasso;
 import com.vidsapp.util.VidsApplUtil;
 
@@ -33,6 +36,8 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
     private final LayoutInflater mLayoutInflater;
 
     private List<YoutubeVideoListItemEntity> mYoutubePlaylistsList;
+    private InterstitialAd mInterstitialAd;
+
 
     public YoutubeVideosListAdapter(Context mContext) {
         this.mContext = mContext;
@@ -42,6 +47,19 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mLayoutInflater.inflate(R.layout.yt_playlist_item, null, false);
+        mInterstitialAd = new InterstitialAd(mContext);
+
+        // set the ad unit ID
+        //Real Ads
+         mInterstitialAd.setAdUnitId(mContext.getString(R.string.interstitial_full_screen));
+        //Test Ads
+       // mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
         return new ViewHolder(view);
     }
 
@@ -93,11 +111,24 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.play) {
+                if(getAdapterPosition()%2!=0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
+
                 Intent intent = new Intent(mContext, YoutubePlayerActivity.class);
                 intent.putExtra("VIDEO_ID", mYoutubePlaylistsList.get(getAdapterPosition()).getId());
                 mContext.startActivity(intent);
             }
             else  if (v.getId() == R.id.share) {
+                if(getAdapterPosition()%2!=0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "https://www.youtube.com/watch?v="+mYoutubePlaylistsList.get(getAdapterPosition()).getId());
@@ -106,8 +137,20 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
 
             } else  if (v.getId() == R.id.fav_no) {
                 // persist the video id in internal file storage
+                if(getAdapterPosition()%2==0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
                 addToFavorite();
             } else  if (v.getId() == R.id.fav_yes) {
+                if(getAdapterPosition()%2==0){
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+                    // Load ads into Interstitial Ads
+                    mInterstitialAd.loadAd(adRequest);
+                }
                 // remove the video from internal file storage
                 removeFromFavorite();
             }
@@ -159,6 +202,11 @@ public class YoutubeVideosListAdapter extends RecyclerView.Adapter<YoutubeVideos
             mYoutubePlaylistsList.addAll(docsList);
         }
         notifyDataSetChanged();
+    }
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 }
 
